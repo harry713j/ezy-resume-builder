@@ -1,9 +1,11 @@
-import "./App.css";
+import "./styles/app.scss";
 
 function App() {
   return (
     <>
-      <h2>Resume builder</h2>
+      <div className="app">
+        <h2>Resume builder</h2>
+      </div>
     </>
   );
 }

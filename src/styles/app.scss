@@ -1,0 +1,11 @@
+@use "_colors" as colors;
+@use "_fonts" as fonts;
+
+.app {
+  text-align: center;
+  h2 {
+    font-family: fonts.$space_grotesk;
+    font-size: 24px;
+    color: colors.$red;
+  }
+}
