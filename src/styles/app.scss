@@ -4,8 +4,15 @@
 .app {
   text-align: center;
   h2 {
-    font-family: fonts.$space_grotesk;
-    font-size: 24px;
-    color: colors.$red;
+    @include fonts.font_montserrat(600, 24px);
+    color: colors.$primary_blue;
+  }
+  p {
+    @include fonts.font_space(300, 16px);
+    color: colors.$black;
+  }
+  a {
+    @include fonts.font_roboto(400, 18px);
+    color: colors.$primary_indigo;
   }
 }
