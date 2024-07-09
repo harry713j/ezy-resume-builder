@@ -1,0 +1,59 @@
+@use "../../styles/colors" as colors;
+@use "../../styles/fonts" as *;
+@use "../../styles/breakpoints" as *;
+
+.signup__card {
+  &.MuiCard-root {
+    width: 400px;
+    padding: 12px 60px 32px 60px;
+  }
+
+  & .MuiCardContent-root {
+    display: flex;
+    flex-direction: column;
+
+    & form {
+      & .MuiTypography-alignCenter {
+        @include font_space(400, 15px);
+        color: colors.$secondary_red;
+        margin-top: 12px;
+      }
+    }
+
+    & .MuiTypography-alignCenter {
+      @include font_montserrat(600, 36px);
+      color: colors.$black;
+      margin-bottom: 32px;
+    }
+
+    & .stack__1 {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    & .stack__2 {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      & .MuiTypography-root {
+        @include font_space(400, 16px);
+        color: colors.$black;
+        margin-bottom: 0px;
+
+        & .MuiLink-root {
+          @include font_space(500, 16px);
+          color: colors.$primary_indigo;
+          cursor: pointer;
+        }
+      }
+
+      & .MuiDivider-withChildren {
+        @include font_space(400, 16px);
+        color: colors.$black;
+      }
+    }
+  }
+}

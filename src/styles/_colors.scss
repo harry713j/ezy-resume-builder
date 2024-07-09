@@ -1,9 +1,16 @@
 $primary_indigo: #4b70f5;
 $secondary_indigo: #b7c6fe;
 $primary_blue: #1877f2;
-$secondary_blue: #e4f6ff;
+$secondary_blue: #549eff; // input or text area outline color
+$sky_blue: #e4f6ff;
 $black: #474c5d;
-$red: #ff3b30;
+$primary_red: #ff3b30;
+$secondary_red: #d32f2f;
 $light_green: #25de66;
-$dark_blue: #0077b5;
-$dark_red: #f56040;
+$dark_blue: #0077b5; // this is for linkedIn logo only
+$dark_red: #f56040; // this is for instagram logo only
+
+* {
+  margin: 0;
+  padding: 0;
+}

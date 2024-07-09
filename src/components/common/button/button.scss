@@ -1,0 +1,33 @@
+@use "../../../styles/colors" as colors;
+@use "../../../styles/fonts" as *;
+@use "../../../styles/breakpoints" as *;
+
+.button__contained {
+  &.MuiButton-root {
+    @include font_space(700, 16px);
+    width: 100%;
+    background-color: colors.$primary_blue;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.button__outlined {
+  // variant="outlined"
+  &.MuiButton-outlined {
+    @include font_space(700, 16px);
+    width: 100%;
+    color: colors.$primary_blue;
+    border-color: colors.$primary_blue;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.button__text {
+  //if variant is "text" then this style will apply
+  &.MuiButton-text {
+    @include font_space(500, 18px);
+    color: colors.$primary_indigo;
+  }
+}

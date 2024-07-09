@@ -1,0 +1,49 @@
+@use "../../../styles/colors" as colors;
+@use "../../../styles/fonts" as *;
+@use "../../../styles/breakpoints" as *;
+
+.input {
+  & .MuiInputBase-root {
+    width: 100%;
+    color: colors.$black;
+    border: none;
+    outline: 1px solid rgba($color: colors.$black, $alpha: 0.5);
+
+    & fieldset {
+      border: none;
+    }
+
+    &.Mui-focused {
+      outline: 1.3px solid colors.$secondary_blue;
+      border-color: transparent;
+    }
+
+    &.Mui-error {
+      outline: 1.3px solid colors.$secondary_red;
+      border-color: transparent;
+    }
+  }
+
+  & .MuiInputLabel-root {
+    @include font_space(400, 16px);
+    background-color: #fff;
+    z-index: 10;
+    padding: 0 4px 0 2px;
+    text-transform: capitalize;
+
+    &.Mui-focused {
+      color: colors.$secondary_blue;
+    }
+
+    &.Mui-error {
+      color: colors.$secondary_red;
+    }
+  }
+
+  & .MuiFormHelperText-root {
+    &.Mui-error {
+      @include font_space(300, 12px);
+      color: colors.$secondary_red;
+    }
+  }
+}
