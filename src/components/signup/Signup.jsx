@@ -4,7 +4,7 @@ import {
   Stack,
   Card,
   CardContent,
-  Link,
+  Link as MuiLink,
   Divider,
   Snackbar,
   Alert,
@@ -21,6 +21,7 @@ import {
 } from "../../firebase/authentication.js";
 import { getUser } from "../../firebase/database.js";
 import { login } from "../../store/slices/authSlice.js";
+import { Link } from "react-router-dom";
 
 function Signup() {
   const {
@@ -117,7 +118,7 @@ function Signup() {
           <Stack className="stack__2">
             <Button type="submit">create account</Button>
             <Typography align="center">
-              Already have an account? <Link>Log in</Link> here.
+              Already have an account? <Link to={"/login"}><MuiLink>Log in</MuiLink></Link> here.
             </Typography>
             <Divider>or</Divider>
             <Button onClick={handleGoogleSignIn} startIcon={<GoogleLogo />}>

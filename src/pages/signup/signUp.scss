@@ -5,6 +5,8 @@
 .signUp {
   display: flex;
   justify-content: center;
+  align-items: center;
   background: linear-gradient(colors.$sky_blue, #fff);
   margin: 0 auto;
+  height: 100vh;
 }

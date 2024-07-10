@@ -5,7 +5,8 @@
 .logIn {
   display: flex;
   justify-content: center;
+  align-items: center;
   background: linear-gradient(colors.$sky_blue, #fff);
   margin: 0 auto;
-  padding-top: 5vh;
+height: 100vh;
 }
