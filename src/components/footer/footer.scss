@@ -1,0 +1,60 @@
+@use "../../styles/colors" as colors;
+@use "../../styles/fonts" as *;
+@use "../../styles/breakpoints" as *;
+
+
+
+.footer {
+    background:Linear-gradient( #E4F6FF 100%,#FFFFFF 100%) ;
+    padding: 2rem 0;
+    text-align: center;
+
+    .footer-content {
+        max-width: 800px;
+        margin: 0 auto;
+        font-family: "Space Grotesk" ,sans-serif;
+    }
+
+    .footer-logo {
+        font-size: 2rem;
+        color: #4169e1;
+        margin-bottom: 1rem;
+    }
+
+    .github-link {
+        margin-bottom: 1rem;
+
+        a {
+            color: #333;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+
+            &:hover {
+                color: #4169e1;
+            }
+        }
+
+        .star-icon{
+            color: #FFCC4A;
+        }
+        .github-icon {
+            font-size: 1.2rem;
+        }
+    }
+
+    .team-info {
+        font-size: 0.9rem;
+        color: #666;
+
+        a {
+            color: #4169e1;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

@@ -1,2 +1,8 @@
 @use "_colors" as colors;
 @use "_fonts" as fonts;
+
+
+.app {
+background: linear-gradient(colors.$sky_blue, #fff);
+height: 100vh;
+}

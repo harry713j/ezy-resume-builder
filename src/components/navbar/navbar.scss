@@ -1,0 +1,58 @@
+@use "../../styles/colors" as colors;
+@use "../../styles/fonts" as *;
+@use "../../styles/breakpoints" as *;
+
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: Linear-gradient(#E4F6FF 100%, #E4F6FF 100%);
+
+
+    .navbar-brand {
+        .navbar-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #4169e1;
+            text-decoration: none;
+        }
+    }
+
+    .navbar-menu {
+        display: flex;
+        align-items: center;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+          
+         .active{
+            color: colors.$primary_indigo;
+         }
+
+         .not-active{
+           color: colors.$black;
+         }
+        .navbar-item {
+            margin-left: 1.5rem;
+            text-decoration: none;
+
+
+            &:hover {
+               color: colors.$primary_indigo ;
+            }
+        }
+
+        .login-button {
+           padding:  8px, 22px, 8px, 22px ;
+           margin-left: 1.5rem ;
+        //    background-color: colors.$primary_blue !important;
+
+            // &:hover {
+            //     background-color: colors.$secondary_blue !important;
+            //     color: white;
+            // }
+        }
+    }
+}

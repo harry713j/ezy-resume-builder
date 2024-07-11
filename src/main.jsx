@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
-import { SignUp, LogIn } from "./pages";
+import { SignUp, LogIn, Templates } from "./pages";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store/store.js";
@@ -11,7 +11,12 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
     // errorElement: , // add error page here
-    // children=[]
+    children:[
+      {
+        path: "/templates",
+        element: <Templates />,
+      },
+    ]
   },
   {
     path: "/signup",
@@ -20,7 +25,8 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <LogIn />,
-  },
+  }, 
+  
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
