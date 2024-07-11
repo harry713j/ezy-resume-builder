@@ -1,35 +1,41 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  personalInfo: null,
-  educationDetails: null,
-  workExperience: [],
-  skills: [],
-  projects: [],
-  achievements: [],
+  template: "",
+  details: {
+    personalInfo: null,
+    educationDetails: null,
+    workExperience: [],
+    skills: [],
+    projects: [],
+    achievements: [],
+  },
 };
 
 const userDetailsSlice = createSlice({
   name: "userDetails",
   initialState,
   reducers: {
+    selectTemplate: (state, action) => {
+      state.template = action.payload;
+    },
     addPersonalInfo: (state, action) => {
-      state.personalInfo = { ...action.payload };
+      state.details.personalInfo = { ...action.payload };
     },
     addEducationDetails: (state, action) => {
-      state.educationDetails = { ...action.payload };
+      state.details.educationDetails = { ...action.payload };
     },
     addWorkExperience: (state, action) => {
-      state.workExperience = [...action.payload];
+      state.details.workExperience = [...action.payload];
     },
     addSkills: (state, action) => {
-      state.skills = [...action.payload];
+      state.details.skills = [...action.payload];
     },
     addProjects: (state, action) => {
-      state.projects = [...action.payload];
+      state.details.projects = [...action.payload];
     },
     addAchievement: (state, action) => {
-      state.projects = [...action.payload];
+      state.details.projects = [...action.payload];
     },
   },
 });
@@ -41,6 +47,7 @@ export const {
   addProjects,
   addSkills,
   addWorkExperience,
+  selectTemplate,
 } = userDetailsSlice.actions;
 
 export default userDetailsSlice.reducer;
