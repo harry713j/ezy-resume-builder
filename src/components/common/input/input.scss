@@ -9,6 +9,7 @@
     border: none;
     outline: 1px solid rgba($color: colors.$black, $alpha: 0.5);
 
+    // TODO: change this class to live change in border state
     & fieldset {
       border: none;
     }

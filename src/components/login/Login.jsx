@@ -4,7 +4,7 @@ import {
   Stack,
   Card,
   CardContent,
-    Link as MuiLink,
+  Link as MuiLink,
   Divider,
   Snackbar,
   Alert,
@@ -113,7 +113,11 @@ function Login() {
           <Stack className="stack__2">
             <Button type="submit">log in</Button>
             <Typography align="center">
-              Don’t have any account? <Link to={"/signup"}><MuiLink>Sign up</MuiLink></Link> here.
+              Don’t have any account?{" "}
+              <Link to={"/signup"}>
+                <MuiLink>Sign up</MuiLink>
+              </Link>{" "}
+              here.
             </Typography>
             <Divider>or</Divider>
             <Button onClick={handleGoogleSignIn} startIcon={<GoogleLogo />}>
