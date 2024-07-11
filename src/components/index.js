@@ -5,3 +5,4 @@ export { default as Login } from "./login/Login.jsx";
 export { default as Navbar } from "./navbar/Navbar.jsx";
 export { default as Footer } from "./footer/Footer.jsx";
 export { default as Templates } from "./templates/Templates.jsx";
+export { default as SideTab } from "./common/side-tab/SideTab.jsx";
