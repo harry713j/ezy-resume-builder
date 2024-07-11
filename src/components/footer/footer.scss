@@ -2,59 +2,61 @@
 @use "../../styles/fonts" as *;
 @use "../../styles/breakpoints" as *;
 
-
-
 .footer {
-    background:Linear-gradient( #E4F6FF 100%,#FFFFFF 100%) ;
-    padding: 2rem 0;
-    text-align: center;
+  background: linear-gradient(#ffffff, colors.$sky_blue);
+  padding: 2rem 0;
+  text-align: center;
+  border-top: 1px solid rgba(colors.$black, 0.5);
+  margin-top: 9rem;
 
-    .footer-content {
-        max-width: 800px;
-        margin: 0 auto;
-        font-family: "Space Grotesk" ,sans-serif;
+  .footer-content {
+    @include font_space(400, 16px);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .footer-logo {
+    @include font_montserrat(700, 1.5rem);
+    color: colors.$primary_indigo;
+    margin-bottom: 1rem;
+  }
+
+  .github-link {
+    margin-bottom: 1rem;
+
+    a {
+      color: colors.$black;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      transition: all ease-in-out 1s;
+      gap: 0.5rem;
+
+      &:hover {
+        color: colors.$primary_indigo;
+      }
     }
 
-    .footer-logo {
-        font-size: 2rem;
-        color: #4169e1;
-        margin-bottom: 1rem;
+    .star-icon {
+      color: #ffcc4a;
     }
-
-    .github-link {
-        margin-bottom: 1rem;
-
-        a {
-            color: #333;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-
-            &:hover {
-                color: #4169e1;
-            }
-        }
-
-        .star-icon{
-            color: #FFCC4A;
-        }
-        .github-icon {
-            font-size: 1.2rem;
-        }
+    .github-icon {
+      font-size: 1.2rem;
     }
+  }
 
-    .team-info {
-        font-size: 0.9rem;
-        color: #666;
+  .team-info {
+    font-size: 0.9rem;
+    color: colors.$black;
 
-        a {
-            color: #4169e1;
-            text-decoration: none;
+    a {
+      color: colors.$primary_indigo;
+      text-decoration: none;
+      transition: all ease-in-out 0.4s;
 
-            &:hover {
-                text-decoration: underline;
-            }
-        }
+      &:hover {
+        text-decoration: underline;
+      }
     }
+  }
 }
