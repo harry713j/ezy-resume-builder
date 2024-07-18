@@ -1,0 +1,125 @@
+.about {
+  font-family: "Space Grotesk", sans-serif;
+  // width: 100%;
+  background-color: Linear-gradient(#e4f6ff 100%, #e4f6ff 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  .top {
+    flex: 1;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    gap: 15px;
+    margin-bottom: 8rem;
+    .title {
+      color: #474c5d;
+      margin-bottom: 1rem;
+    }
+
+    .description {
+      max-width: 904px;
+      line-height: 1.5rem;
+      font-size: 16px;
+      font-weight: 400;
+      color: #474c5d;
+    }
+  }
+  .middle {
+    width: 100%;
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8rem;
+
+    h1{
+      color: #474c5d;
+      font-weight: 600;
+      margin-bottom: 2rem;
+    }
+
+    h3{
+      color: blue;
+      cursor: pointer;
+      text-decoration: underline;
+      margin-bottom: 1rem;
+    }
+
+
+
+    .features {
+      width: 900px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+
+      @media (max-width:720px) {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .feature {
+        margin: 10px;
+        padding: 20px;
+        width: calc(50% - 20px);
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          width: 100px;
+          height: auto;
+          margin-bottom: 15px;
+        }
+
+        h2 {
+          color: #333;
+          font-size: 1.5em;
+          margin-bottom: 20px;
+        }
+        .desc{
+          display: flex;
+          align-items: center;
+          gap: 20px;
+
+
+          p{
+            max-width: 200px;
+            line-height: 1.5 ;
+            color: #474c5d;
+            font-weight: 300;
+            // color: rgba(62, 137, 204, 0.974);
+          }
+        }
+      }
+    }
+  }
+  .bottom {
+    flex: 1;
+
+
+    .social{
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      justify-content: center;
+      margin: 20px 40px;
+    }
+  }
+}
