@@ -2,9 +2,8 @@
 @use "../../../styles/fonts" as *;
 @use "../../../styles/breakpoints" as *;
 
-.input {
+.textarea {
   width: 100%;
-
   & .MuiInputBase-root {
     // width: 100%;
     color: colors.$black;

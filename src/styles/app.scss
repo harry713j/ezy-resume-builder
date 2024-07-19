@@ -2,6 +2,6 @@
 @use "_fonts" as fonts;
 
 .main {
-  margin-top: 3rem;
-  margin-bottom: 9rem;
+  padding: 3rem 4.75rem 9rem 4.75rem;
+  background: linear-gradient(colors.$sky_blue, #fff);
 }

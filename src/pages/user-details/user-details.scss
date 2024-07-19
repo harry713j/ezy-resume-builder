@@ -1,0 +1,21 @@
+@use "../../styles/colors" as colors;
+@use "../../styles/breakpoints" as *;
+@use "../../styles/fonts" as *;
+
+.user__details {
+  width: 100%;
+  display: flex;
+  //   border: 1px solid red;
+  justify-content: space-between;
+  align-items: start;
+
+  & .side__nav {
+    width: 24%;
+    // border: 1px solid pink;
+  }
+
+  & .__form {
+    // border: 1px solid goldenrod;
+    width: 66%;
+  }
+}

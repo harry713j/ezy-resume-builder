@@ -1,6 +1,6 @@
 import "./styles/app.scss";
 import React from "react";
-import { Navbar, Footer, SideTab } from "./components";
+import { Navbar, Footer } from "./components";
 import { Outlet } from "react-router-dom";
 
 function App() {
@@ -8,7 +8,6 @@ function App() {
     <>
       <Navbar />
       <main className="main">
-        <SideTab />
         <Outlet />
       </main>
       <Footer />
