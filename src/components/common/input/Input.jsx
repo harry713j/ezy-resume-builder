@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { TextField, InputAdornment, IconButton } from "@mui/material";
-import { Password, Visibility, VisibilityOff } from "@mui/icons-material";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 import "./input.scss";
 
 const Input = React.forwardRef(function (
