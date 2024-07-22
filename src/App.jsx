@@ -1,21 +1,18 @@
 import "./styles/app.scss";
 import React from "react";
-import { Navbar, Footer} from "./components";
-import LandingPage from './components/LandingPage/LandingPage';
-
+import { Navbar,Footer } from "./components";
 import { Outlet } from "react-router-dom";
-
 
 function App() {
   return (
     <>
+     
       <div className="app">
-        <Navbar />
+      <Navbar />
         <div className="main">
-          <Outlet />
-          { <LandingPage />}
+       <Outlet />
         </div>
-        <Footer />
+      <Footer />
       </div>
     </>
   );

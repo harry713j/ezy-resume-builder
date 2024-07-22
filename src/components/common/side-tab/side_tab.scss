@@ -1,0 +1,48 @@
+@use "../../../styles/colors" as colors;
+@use "../../../styles/fonts" as *;
+@use "../../../styles/breakpoints" as *;
+
+.section__tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6px;
+  background-color: rgba($color: colors.$black, $alpha: 0.2);
+  width: 100%;
+  border-radius: 4px;
+  // margin-left: 20pc;
+
+  & .active {
+    color: colors.$primary_indigo;
+    border-left: 4px solid colors.$primary_indigo;
+    box-shadow: 0 0 4px rgba($color: colors.$black, $alpha: 0.5);
+    text-decoration: none;
+  }
+  & .not__active {
+    text-decoration: none;
+    color: rgba($color: colors.$black, $alpha: 0.7);
+  }
+  & .tab__item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #fff;
+    padding: 0.9rem 1.2rem;
+    box-shadow: 0 0 2px rgba($color: colors.$black, $alpha: 0.5);
+    border-left: 4px solid transparent;
+    transition: all ease-in-out 0.2s;
+
+    &:hover {
+      box-shadow: 0 0 7px rgba($color: colors.$black, $alpha: 0.5);
+    }
+
+    & .tab__icon {
+      font-size: 10px;
+    }
+
+    & .tab__label {
+      @include font_montserrat(500, 15px);
+
+      text-transform: capitalize;
+    }
+  }
+}

@@ -10,6 +10,7 @@ const Footer = () => {
     { name: "Abir", url: "https://github.com/Abir" },
     { name: "Hari", url: "https://github.com/Hari" },
   ];
+
   return (
     <footer className="footer">
       <div className="footer-content">
