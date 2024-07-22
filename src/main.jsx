@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
-import { SignUp, LogIn, Templates, UserDetails } from "./pages";
+import { SignUp, LogIn, Templates, UserDetails, LandingPage} from "./pages";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store/store.js";
@@ -14,6 +14,10 @@ const router = createBrowserRouter([
     // errorElement: , // add error page here
 
     children: [
+      {
+        path: "/",
+        element: <LandingPage />, 
+      },
       {
         path: "/templates",
         element: <Templates />,
