@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store/store.js";
 import { PersonalInfo } from "./components/index.js";
+import About from './pages/About/About.jsx'
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: "/templates",
         element: <Templates />,
+      },
+      {
+        path:"/abouts",
+        element:<About />
       },
       {
         path: "/user-details",
