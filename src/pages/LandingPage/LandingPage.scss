@@ -13,7 +13,7 @@ body, html {
   padding: 0;
   height: 100%;
   font-family: 'Roboto', sans-serif;
-  // background: linear-gradient(to right, $sky_blue, #fff);
+  
 }
 
 * {
@@ -30,7 +30,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  // background: linear-gradient($sky_blue, #fff);
+  
 }
 
 .header {
@@ -53,7 +53,7 @@ body {
 
 .hero {
   padding: 40px 0;
-  // background: linear-gradient(to right, #e4f6ff, #fff);
+  
 }
 
 .hero .MuiTypography-h3 {
@@ -95,13 +95,20 @@ body {
 }
 
 .three-step-process {
+  position: relative; 
+
   .header {
     text-align: center;
     margin-bottom: 40px;
     font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 48.17px;
+    line-height: 58.72px;
+    letter-spacing: 1%;
+    color: #474C5D;
 
     .highlight {
-      color: #4b70f5; 
+      color: #4b70f5;
     }
   }
 
@@ -113,39 +120,123 @@ body {
     .step {
       display: flex;
       align-items: center;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
 
       &.step-1,
       &.step-3 {
-        flex-direction: row;
+        justify-content: flex-start;
+        margin-right: 45%;
+        text-align: left;
       }
 
       &.step-2 {
-        flex-direction: row-reverse;
+        justify-content: flex-start;
+        margin-left: 45%;
+        text-align: left;
       }
 
       .step-image {
-        flex: 1;
-        max-width: 200px;
+        max-width: 245px;
+        max-height: 200px;
         margin: 0 20px;
       }
 
       .step-text {
-        flex: 1;
-
         .sub-header {
           color: #4b70f5;
           font-family: 'Montserrat', sans-serif;
+          font-weight: 600;
+          font-size: 20px;
+          letter-spacing: -6.7%;
+          text-align: right;
         }
 
-        .body1 {
-          color: #474c5d;
-          font-family: 'Roboto', sans-serif;
+        .custom1-body1 {
+          color: #4b70f5;
+          font-family: 'Space Grotesk', sans-serif;
+          font-weight: 500;
+          font-size: 10px;
+          letter-spacing: -6.7%;
+          text-align: right;
+          position: relative;
+          top: -10px;
+          right: -45px;
+        }
+
+        .custom2-body1 {
+          color: #4b70f5;
+          font-family: 'Space Grotesk', sans-serif;
+          font-weight: 500;
+          font-size: 10px;
+          letter-spacing: -6.7%;
+          text-align: right;
+          position: relative;
+          top: -10px;
+          right: -10px;
+        }
+
+        .custom3-body1 {
+          color: #4b70f5;
+          font-family: 'Space Grotesk', sans-serif;
+          font-weight: 500;
+          font-size: 10px;
+          letter-spacing: -6.7%;
+          text-align: right;
+          position: relative;
+          top: -10px;
+          right: -105px;
+        }
+
+        .bullet {
+          font-family: 'Montserrat', sans-serif;
+          font-weight: 700;
+          font-size: 57.81px;
+          line-height: 67.44px;
+          letter-spacing: -6.7%;
+          color: #4b70f5;
+          text-align: right;
+          position: relative;
+          top: 25px;
         }
       }
     }
   }
+
+  .circle {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: #B7C6FE;
+    border-radius: 50%;
+    top: 210px;
+    left: 1050px;
+    
+  }
+
+  .square {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: #B7C6FE;
+    
+   
+  }
+
+  .square-1 {
+    top: 500px; 
+    left: 450px; 
+   
+  }
+
+  .square-2 {
+    top: 535px; 
+    left: 470px; 
+    border: 1.93px dashed #4B70F5;
+    
+    background-color: transparent;
+  }
 }
+
 
 .sample-templates {
   margin: 40px 0;
@@ -154,19 +245,19 @@ body {
     margin-bottom: 20px;
     font-family: 'Montserrat', sans-serif;
     color: #000;
-    font-size: 1.7rem; // Adjust the size as needed
+    font-size: 1.7rem; 
     font-weight: 600;
   }
 
   .body1 {
-    font-family:"Space Grotesk", sans-serif ;//'Roboto', sans-serif;
-    color: #474c5d; // Darker color for body text
+    font-family:"Space Grotesk", sans-serif ;
+    color: #474c5d; 
   }
 
   .template-stack {
     position: relative;
-    width: 300px; // Adjust width to fit your design
-    height: 400px; // Adjust height to fit your design
+    width: 300px; 
+    height: 400px; 
     margin: auto;
 
     .template {
@@ -199,7 +290,6 @@ body {
 
 .illustration {
   padding: 40px 0;
-  // background: linear-gradient(to bottom, #e4f6ff, #fff); // Light blue gradient
 
   .illustration-img {
     max-width: 100%;
@@ -208,23 +298,19 @@ body {
 
   .header {
     font-family: 'Montserrat', sans-serif;
-    color: #000; // Black color for the header
-    font-size: 1.5rem; // Adjust the size as needed
+    color: #000; 
+    font-size: 1.5rem; 
     font-weight: 600;
     margin-bottom: 20px;
   }
 
   .body1 {
-    font-family:"Space Grotesk", sans-serif ;//'Roboto', sans-serif;
-    color: #474c5d; // Darker color for body text
+    font-family:"Space Grotesk", sans-serif ;
+    color: #474c5d; 
   }
 }
 
-.footer {
-  text-align: center;
-  padding: 20px;
-  // background-color: $sky_blue;
-}
+
 
 
 
