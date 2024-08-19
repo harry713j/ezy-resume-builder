@@ -8,3 +8,4 @@ export { default as Templates } from "./templates/Templates.jsx";
 export { default as SideTab } from "./common/side-tab/SideTab.jsx";
 export { default as PersonalInfo } from "./form/personal-info/PersonalInfo.jsx";
 export { default as TextArea } from "./common/textarea/TextArea.jsx";
+export { default as TemplateCard } from "./common/card/TemplateCard.jsx";
