@@ -50,6 +50,7 @@
     }
 
     & h3 {
+      @include font_space(600, 24px);
       color: colors.$primary_indigo;
       margin-bottom: 1rem;
     }
@@ -76,26 +77,25 @@
         padding: 20px;
         width: calc(50% - 20px);
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        align-items: flex-end;
+        gap: 0.5rem;
 
-        & h2 {
-          @include font_montserrat(600, 20px);
-          color: colors.$black;
-          margin-bottom: 20px;
-          text-transform: capitalize;
+        & img {
+          width: 150px;
+          height: auto;
         }
 
         & .desc {
           display: flex;
-          align-items: center;
-          gap: 20px;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.5rem;
 
-          & img {
-            width: 100px;
-            height: auto;
-            margin-bottom: 15px;
+          & h2 {
+            @include font_montserrat(600, 20px);
+            color: colors.$black;
+            margin-bottom: 1rem;
+            text-transform: capitalize;
           }
 
           & p {

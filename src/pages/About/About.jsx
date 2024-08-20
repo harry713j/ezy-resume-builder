@@ -32,12 +32,9 @@ const About = () => {
         <h3>Why Choose us?</h3>
         <div className="features">
           <div className="feature">
-            <h2>Easy to use</h2>
+            <img src="/images/using_laptop.png" alt="Easy to use icon" />
             <div className="desc">
-              <img
-                src="/images/seated_man_wearing_headphones using laptop.png"
-                alt="Easy to use icon"
-              />
+              <h2>Easy to use</h2>
               <p>
                 The process of writing a resume is substantially sped up and
                 simplified by using our resume builder.
@@ -45,12 +42,9 @@ const About = () => {
             </div>
           </div>
           <div className="feature">
-            <h2>Cool Templates</h2>
+            <img src="/images/template_design.png" alt="Cool templates icon" />
             <div className="desc">
-              <img
-                src="/images/template_design.png"
-                alt="Cool templates icon"
-              />
+              <h2>Cool Templates</h2>
               <p>
                 Our template designs help your resume stand out in a pool of
                 others.
@@ -58,12 +52,12 @@ const About = () => {
             </div>
           </div>
           <div className="feature">
-            <h2>Intelligent Design</h2>
+            <img
+              src="/images/Design_Process.png"
+              alt="Intelligent design icon"
+            />
             <div className="desc">
-              <img
-                src="/images/Design_Process.png"
-                alt="Intelligent design icon"
-              />
+              <h2>Intelligent Design</h2>
               <p>
                 With us, you will not have to bother about the minute details of
                 resume development, such as font choice, layout, etc.
@@ -71,12 +65,12 @@ const About = () => {
             </div>
           </div>
           <div className="feature">
-            <h2>No Hidden Charges</h2>
+            <img
+              src="/images/No_hidden_charges.png"
+              alt="No hidden charges icon"
+            />
             <div className="desc">
-              <img
-                src="/images/No_hidden_charges.png"
-                alt="No hidden charges icon"
-              />
+              <h2>No Hidden Charges</h2>
               <p>
                 We have got a free version and our premium pricing is clear. We
                 notify you about any new charges in good time.
