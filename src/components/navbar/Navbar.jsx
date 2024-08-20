@@ -32,7 +32,7 @@ const Navbar = () => {
           </NavLink>
 
           <NavLink
-            to="/abouts"
+            to="/about"
             className={({ isActive }) =>
               `${isActive ? "active" : "not-active"} navbar-item`
             }
