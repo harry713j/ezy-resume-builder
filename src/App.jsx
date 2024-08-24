@@ -6,11 +6,13 @@ import { Outlet } from "react-router-dom";
 function App() {
   return (
     <>
-      <Navbar />
-      <main className="main">
-        <Outlet />
-      </main>
-      <Footer />
+      <div className="app">
+        <Navbar />
+        <div className="main">
+          <Outlet />
+        </div>
+        <Footer />
+      </div>
     </>
   );
 }

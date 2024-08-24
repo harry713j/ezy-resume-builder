@@ -1,0 +1,294 @@
+@use "../../styles/_colors" as colors;
+@use "../../styles/_fonts" as *;
+@use "../../styles/breakpoints" as *;
+
+.landing__page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+
+  & .hero__section {
+    display: flex;
+    gap: 7rem;
+    & .text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1.5rem;
+
+      & .hero__title {
+        @include font_montserrat(700, 2.5em);
+        color: colors.$black;
+      }
+      & .hero__paragraph {
+        @include font_space(400, 1.3em);
+        color: rgba($color: colors.$black, $alpha: 0.8);
+      }
+      & .CTA__button {
+        width: 40%;
+      }
+    }
+    & .image {
+      width: 70%;
+      & .resume {
+        width: 100%;
+      }
+    }
+  }
+
+  & .illustration__section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    & .illustration__title {
+      @include font_montserrat(600, 2.2em);
+      color: colors.$black;
+      text-align: center;
+
+      & span {
+        color: colors.$primary_indigo;
+      }
+    }
+
+    & .row__one {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      & .illustration {
+        width: 25%;
+        & img {
+          width: 100%;
+        }
+      }
+      & .description {
+        display: flex;
+        align-items: flex-end;
+        gap: 0.25rem;
+
+        & .number {
+          @include font_montserrat(700, 4em);
+          color: colors.$primary_indigo;
+        }
+
+        & span {
+          display: inline-block;
+          color: colors.$primary_indigo;
+
+          & h3 {
+            @include font_montserrat(600, 1.8em);
+          }
+          & p {
+            @include font_space(500, 0.9em);
+          }
+        }
+      }
+
+      & .circle {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        background-color: rgba($color: colors.$primary_indigo, $alpha: 0.4);
+      }
+    }
+    & .row__two {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 1.5rem;
+
+      & .square__3d {
+        width: 6rem;
+        height: 6rem;
+        position: relative;
+        margin-right: 1rem;
+        margin-top: 8rem;
+
+        & .square {
+          width: 67%;
+          height: 67%;
+          background-color: rgba($color: colors.$primary_indigo, $alpha: 0.4);
+          position: absolute;
+        }
+        & .dotted {
+          background-color: transparent;
+          border: 1.4px dashed colors.$primary_indigo;
+          position: absolute;
+          top: 30%;
+          left: 30%;
+        }
+      }
+      & .illustration {
+        width: 25%;
+        & img {
+          width: 100%;
+        }
+      }
+      & .description {
+        display: flex;
+        align-items: flex-end;
+        gap: 0.25rem;
+
+        & .number {
+          @include font_montserrat(700, 4em);
+          color: colors.$primary_indigo;
+        }
+
+        & span {
+          display: inline-block;
+          color: colors.$primary_indigo;
+
+          & h3 {
+            @include font_montserrat(600, 1.8em);
+          }
+          & p {
+            @include font_space(500, 0.9em);
+          }
+        }
+      }
+    }
+    & .row__three {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 3rem;
+
+      & .illustration {
+        width: 25%;
+        & img {
+          width: 100%;
+        }
+      }
+      & .description {
+        display: flex;
+        align-items: flex-end;
+        gap: 0.25rem;
+
+        & .number {
+          @include font_montserrat(700, 4em);
+          color: colors.$primary_indigo;
+        }
+
+        & span {
+          display: inline-block;
+          color: colors.$primary_indigo;
+
+          & h3 {
+            @include font_montserrat(600, 1.8em);
+          }
+          & p {
+            @include font_space(500, 0.9em);
+          }
+        }
+      }
+    }
+  }
+
+  & .description__section {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    & .first__desc {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+
+      & .text__container {
+        width: 35%;
+        color: colors.$black;
+
+        & .paragraph__title {
+          @include font_montserrat(600, 1.75em);
+          margin-bottom: 1rem;
+        }
+        & .paragraph {
+          @include font_space(400, 0.9em);
+          color: rgba($color: colors.$black, $alpha: 0.8);
+        }
+      }
+
+      & .image__container {
+        width: 40%;
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+
+        & .image__one {
+          position: absolute;
+          border: 0.5px solid rgba($color: colors.$black, $alpha: 0.4);
+          width: 42%;
+          transform: translateX(0);
+        }
+
+        & .image__two {
+          border: 0.5px solid rgba($color: colors.$black, $alpha: 0.4);
+          width: 50%;
+          z-index: 10;
+        }
+        & .image__three {
+          position: absolute;
+          border: 0.5px solid rgba($color: colors.$black, $alpha: 0.4);
+          width: 42%;
+          transform: translateX(0);
+        }
+
+        & .animate__left {
+          animation: slide-left 1s ease-out forwards;
+        }
+
+        & .animate__right {
+          animation: slide-right 1s ease-out forwards;
+        }
+
+        @keyframes slide-left {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+
+        @keyframes slide-right {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(50%);
+          }
+        }
+      }
+    }
+
+    & .second__desc {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+
+      & .text__container {
+        width: 35%;
+        color: colors.$black;
+
+        & .paragraph__title {
+          @include font_montserrat(600, 1.75em);
+          margin-bottom: 1rem;
+        }
+        & .paragraph {
+          @include font_space(400, 0.9em);
+          color: rgba($color: colors.$black, $alpha: 0.8);
+        }
+      }
+
+      & .image__container {
+        width: 40%;
+        & img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

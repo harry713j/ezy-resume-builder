@@ -1,0 +1,39 @@
+@use "../../../styles/colors" as colors;
+@use "../../../styles/fonts" as *;
+@use "../../../styles/breakpoints" as *;
+
+.date__picker {
+  &.MuiTextField-root {
+    & .MuiInputLabel-root {
+      @include font_space(400, 1em);
+      color: colors.$black;
+      text-transform: capitalize;
+      background-color: #fff;
+      padding: 0 4px;
+    }
+
+    & .MuiInputBase-root {
+      color: colors.$black;
+      border: none;
+      outline: 1px solid rgba($color: colors.$black, $alpha: 0.5);
+
+      & .MuiInputBase-input {
+        color: colors.$black;
+      }
+
+      & fieldset {
+        border: none;
+      }
+
+      &.Mui-focused {
+        outline: 1.3px solid colors.$secondary_blue;
+        border-color: transparent;
+      }
+
+      &.Mui-error {
+        outline: 1.3px solid colors.$secondary_red;
+        border-color: transparent;
+      }
+    }
+  }
+}

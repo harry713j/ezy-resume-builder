@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store/store.js";
 import { PersonalInfo } from "./components/index.js";
+import About from "./pages/About/About.jsx";
 
 const router = createBrowserRouter([
   {
@@ -16,11 +17,15 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <LandingPage />, 
+        element: <LandingPage />,
       },
       {
         path: "/templates",
         element: <Templates />,
+      },
+      {
+        path: "/about",
+        element: <About />,
       },
       {
         path: "/user-details",

@@ -7,7 +7,7 @@ const Footer = () => {
     { name: "Shyam", url: "https://github.com/Shyam" },
     { name: "Deepak", url: "https://github.com/Deepak" },
     { name: "Dhanashree", url: "https://github.com/Dhanashree" },
-    { name: "Abhir", url: "https://github.com/Abhir" },
+    { name: "Abir", url: "https://github.com/Abir" },
     { name: "Hari", url: "https://github.com/Hari" },
   ];
 

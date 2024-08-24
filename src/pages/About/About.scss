@@ -1,7 +1,9 @@
+@use "../../styles/colors" as colors;
+@use "../../styles/breakpoints" as *;
+@use "../../styles/fonts" as *;
+
 .about {
-  font-family: "Space Grotesk", sans-serif;
   // width: 100%;
-  background-color: Linear-gradient(#e4f6ff 100%, #e4f6ff 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,7 +12,6 @@
 
   .top {
     flex: 1;
-    height: 700px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,19 +19,21 @@
     padding: 20px;
     gap: 15px;
     margin-bottom: 8rem;
+
     .title {
-      color: #474c5d;
+      @include font_montserrat(600, 36px);
+      color: colors.$black;
       margin-bottom: 1rem;
     }
 
     .description {
+      @include font_space(400, 16px);
       max-width: 904px;
       line-height: 1.5rem;
-      font-size: 16px;
-      font-weight: 400;
-      color: #474c5d;
+      color: colors.$black;
     }
   }
+
   .middle {
     width: 100%;
     flex: 2;
@@ -40,20 +43,17 @@
     justify-content: center;
     margin-bottom: 8rem;
 
-    h1{
-      color: #474c5d;
-      font-weight: 600;
+    & .title {
+      @include font_montserrat(600, 32px);
+      color: colors.$black;
       margin-bottom: 2rem;
     }
 
-    h3{
-      color: blue;
-      cursor: pointer;
-      text-decoration: underline;
+    & h3 {
+      @include font_space(600, 24px);
+      color: colors.$primary_indigo;
       margin-bottom: 1rem;
     }
-
-
 
     .features {
       width: 900px;
@@ -64,7 +64,7 @@
       margin: 0 auto;
       padding: 20px;
 
-      @media (max-width:720px) {
+      @media (max-width: 720px) {
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -76,35 +76,35 @@
         margin: 10px;
         padding: 20px;
         width: calc(50% - 20px);
-        box-sizing: border-box;
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        align-items: flex-start;
+        gap: 0.5rem;
 
-        img {
-          width: 100px;
+        & img {
+          width: 150px;
           height: auto;
-          margin-bottom: 15px;
+          align-self: flex-end;
         }
 
-        h2 {
-          color: #333;
-          font-size: 1.5em;
-          margin-bottom: 20px;
-        }
-        .desc{
+        & .desc {
           display: flex;
-          align-items: center;
-          gap: 20px;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: start;
+          gap: 0.5rem;
 
+          & h2 {
+            @include font_montserrat(600, 20px);
+            color: colors.$black;
+            margin-bottom: 1rem;
+            text-transform: capitalize;
+          }
 
-          p{
+          & p {
+            @include font_space(300, 14px);
             max-width: 200px;
-            line-height: 1.5 ;
-            color: #474c5d;
-            font-weight: 300;
-            // color: rgba(62, 137, 204, 0.974);
+            line-height: 1.5;
+            color: colors.$black;
           }
         }
       }
@@ -113,8 +113,12 @@
   .bottom {
     flex: 1;
 
+    & h1 {
+      @include font_montserrat(600, 28px);
+      color: colors.$black;
+    }
 
-    .social{
+    .social {
       display: flex;
       gap: 20px;
       align-items: center;

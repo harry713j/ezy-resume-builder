@@ -20,7 +20,7 @@
   .navbar-menu {
     display: flex;
     align-items: center;
-    @include font_montserrat(500, 17px);
+    @include font_montserrat(500, 16px);
 
     .active {
       color: colors.$primary_indigo;
