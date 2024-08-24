@@ -4,6 +4,7 @@
 
 .date__picker {
   &.MuiTextField-root {
+    width: 100%;
     & .MuiInputLabel-root {
       @include font_space(400, 1em);
       color: colors.$black;

@@ -33,37 +33,22 @@
       display: flex;
       align-items: center;
       gap: 3rem;
-
-     
-      & .half-width {
-        flex: 0.48; 
-      }
-      & .half-widthdate {
-        flex: 0.5; 
-      }
     }
 
     & .form__buttons {
-      
       display: flex;
       justify-content: flex-end;
-      gap: 1rem; 
+      align-items: center;
+      gap: 1rem;
 
-      & .next-button {
-        background-color: colors.$primary_blue;
-        color: #fff;
-        border: 1px solid colors.$primary_blue;
-        padding: 0.6rem 1.5rem;
-      }
-      & .back-button{
-        background-color: #fff;
-        color: colors.$primary_blue;
-        border: 1px solid colors.$primary_blue;
-        padding: 0.6rem 1.5rem; 
-
-      }
       & span {
         width: 16%;
+
+        & .back__button {
+          background-color: #fff;
+          color: colors.$primary_blue;
+          border: 1px solid colors.$primary_blue;
+        }
       }
     }
   }

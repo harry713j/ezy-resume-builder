@@ -20,7 +20,7 @@ function PersonalInfo() {
     // handle the data coming from the form by dispatching them to store
     dispatch(addPersonalInfo(data));
     // then navigate it to next form
-    navigate("education");
+    navigate("/user-details/education");
   };
 
   return (
@@ -103,40 +103,19 @@ function PersonalInfo() {
           <Input
             label="linkedIn profile (optional)"
             helperText={errors.linkedIn ? errors.linkedIn.message : null}
-            {...register("linkedIn", {
-              validate: {
-                matchPattern: (value) =>
-                  /^(https?:\/\/)?([a-zA-Z0-9_-]+\.)+[a-zA-Z]{2,}(:\d+)?(\/[a-zA-Z0-9#?&=_-]*)*\/?$/.test(
-                    value
-                  ) || "Please provide a valid url",
-              },
-            })}
+            {...register("linkedIn")}
           />
         </div>
         <div className="form__row">
           <Input
             label="gitHub profile (optional)"
             helperText={errors.github ? errors.github.message : null}
-            {...register("github", {
-              validate: {
-                matchPattern: (value) =>
-                  /^(https?:\/\/)?([a-zA-Z0-9_-]+\.)+[a-zA-Z]{2,}(:\d+)?(\/[a-zA-Z0-9#?&=_-]*)*\/?$/.test(
-                    value
-                  ) || "Please provide a valid url",
-              },
-            })}
+            {...register("github")}
           />
           <Input
             label="personal website (optional)"
             helperText={errors.website ? errors.website.message : null}
-            {...register("website", {
-              validate: {
-                matchPattern: (value) =>
-                  /^(https?:\/\/)?(www\.)?[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$/.test(
-                    value
-                  ) || "Please provide a valid url",
-              },
-            })}
+            {...register("website")}
           />
         </div>
         <div className="form__row">

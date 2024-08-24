@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   FormControl,
   InputLabel,
@@ -7,12 +7,13 @@ import {
   Select,
   Box,
   Chip,
+  FormHelperText,
 } from "@mui/material";
 import { Clear } from "@mui/icons-material";
 import "./multiSelect.scss";
 
 const MultiSelect = React.forwardRef(function (
-  { label, items, value, onChange, ...props },
+  { label, items, helperText, value, onChange, ...props },
   ref
 ) {
   const handleDelete = (chipToDelete) => {
@@ -57,6 +58,7 @@ const MultiSelect = React.forwardRef(function (
           </MenuItem>
         ))}
       </Select>
+      <FormHelperText>{helperText}</FormHelperText>
     </FormControl>
   );
 });

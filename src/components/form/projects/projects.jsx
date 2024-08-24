@@ -1,10 +1,12 @@
 import React from "react";
 import "./projects.scss";
-import { Input, Button, MultiSelect, TextArea } from "../../index"; 
-import { useForm, useFieldArray } from "react-hook-form";
+import { Input, Button, MultiSelect, TextArea } from "../../index";
+import { useForm, Controller } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addProjects } from "../../../store/slices/userDetailsSlice.js";
+import { technologies } from "../../../constants/constants.js";
+import { Add, DoubleArrow } from "@mui/icons-material";
 
 function Projects() {
   const {
@@ -15,80 +17,93 @@ function Projects() {
   } = useForm();
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { fields, append } = useFieldArray({
-    control,
-    name: "projects"
-  });
 
   const projectsInfo = (data) => {
     console.log(data);
     dispatch(addProjects(data));
-    navigate("award"); 
+    navigate("/user-details/achievements");
   };
 
   return (
     <div className="details__card">
       <span className="heading__container">
         <h1 className="card__heading">Projects</h1>
-        <button className="skip-button" onClick={() => navigate("next-step")}>Skip</button>
+        <Button
+          variant="text"
+          endIcon={<DoubleArrow />}
+          onClick={() => navigate("/user-details/achievements")}
+        >
+          Skip
+        </Button>
       </span>
       <form onSubmit={handleSubmit(projectsInfo)} className="details__form">
-        {fields.map((item, index) => (
-          <div key={item.id}>
-            <div className="form__row">
-              <Input
-                className="half-width" 
-                label="Project Name"
-                defaultValue={item.projectName}
-                helperText={errors.projects?.[index]?.projectName ? errors.projects[index].projectName.message : null}
-                {...register(`projects.${index}.projectName`, { required: "Project Name is required" })}
-              />
-              <Input
-                className="half-width" 
-                label="Link to Project"
-                defaultValue={item.projectLink}
-                helperText={errors.projects?.[index]?.projectLink ? errors.projects[index].projectLink.message : null}
-                {...register(`projects.${index}.projectLink`, {
-                  validate: {
-                    matchPattern: (value) =>
-                      /^(https?:\/\/)?([a-zA-Z0-9_-]+\.)+[a-zA-Z]{2,}(:\d+)?(\/[a-zA-Z0-9#?&=_-]*)*\/?$/.test(
-                        value
-                      ) || "Please provide a valid URL",
-                  },
+        <div className="form__row">
+          <Input
+            label="Project Name"
+            helperText={errors.projectName ? errors.projectName.message : null}
+            {...register(`projectName`, {
+              required: "Project Name is required",
+            })}
+          />
+          <Input
+            label="Link to Project"
+            helperText={errors.projectLink ? errors.projectLink.message : null}
+            {...register(`projectLink`, {
+              validate: {
+                matchPattern: (value) =>
+                  /^(https?:\/\/)?([a-zA-Z0-9_-]+\.)+[a-zA-Z]{2,}(:\d+)?(\/[a-zA-Z0-9#?&=_-]*)*\/?$/.test(
+                    value
+                  ) || "Please provide a valid URL",
+              },
+            })}
+          />
+        </div>
+        <div className="form__row">
+          <Controller
+            name="tools"
+            defaultValue={undefined}
+            control={control}
+            render={({ field }) => (
+              <MultiSelect
+                label="Tools and Tech Used"
+                items={technologies}
+                helperText={errors.tools ? errors.tools.message : null}
+                {...field}
+                {...register(`tools`, {
+                  required: "Tools and Tech Used is required",
                 })}
               />
-            </div>
-            <div className="form__row">
-              <MultiSelect
-                className="half-width"
-                label="Tools and Tech Used"
-                multiple
-                options={["React", "JavaScript", "Node.js", "CSS", "HTML"]}
-                defaultValue={item.tools}
-                helperText={errors.projects?.[index]?.tools ? errors.projects[index].tools.message : null}
-                {...register(`projects.${index}.tools`, { required: "Tools and Tech Used is required" })}
-              />
-            </div>
-            <div className="form__row">
-              <TextArea
-                label="Project Summary"
-                defaultValue={item.projectSummary}
-                helperText={errors.projects?.[index]?.projectSummary ? errors.projects[index].projectSummary.message : null}
-                {...register(`projects.${index}.projectSummary`, { required: "Project Summary is required" })}
-              />
-            </div>
-          </div>
-        ))}
-        <button type="button" className="add-project-button" onClick={() => append({ projectName: "", projectLink: "", tools: [], projectSummary: "" })}>+ Add new</button>
+            )}
+          />
+        </div>
+        <div className="form__row">
+          <TextArea
+            label="Project Summary"
+            helperText={
+              errors.projectSummary ? errors.projectSummary.message : null
+            }
+            {...register(`projectSummary`, {
+              required: "Project Summary is required",
+            })}
+          />
+        </div>
+
+        <Button type="button" variant="text" startIcon={<Add />}>
+          Add Experience
+        </Button>
         <div className="form__buttons">
-          <Button
-            type="button"
-            className="back-button"
-            onClick={() => navigate("skills")}
-          >Back</Button>
-          <Button type="submit" className="next-button">
-            Next
-          </Button>
+          <span>
+            <Button
+              type="button"
+              variant="outlined"
+              onClick={() => navigate("/user-details/skills")}
+            >
+              Back
+            </Button>
+          </span>
+          <span>
+            <Button type="submit">Next</Button>
+          </span>
         </div>
       </form>
     </div>
@@ -96,4 +111,3 @@ function Projects() {
 }
 
 export default Projects;
-

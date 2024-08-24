@@ -1,10 +1,11 @@
 import React from "react";
 import "./educationInfo.scss";
-import { Input, Button,DatePicker } from "../../index"; 
+import { Input, Button, Select } from "../../index";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { addEducationDetails } from "../../../store/slices/userDetailsSlice.js"; 
+import { addEducationDetails } from "../../../store/slices/userDetailsSlice.js";
+import { years } from "../../../constants/constants.js";
 
 function EducationInfo() {
   const {
@@ -17,10 +18,10 @@ function EducationInfo() {
 
   const educationInfo = (data) => {
     console.log(data);
-    
+
     dispatch(addEducationDetails(data));
-    
-    navigate("experience"); 
+
+    navigate("/user-details/experience");
   };
 
   return (
@@ -29,17 +30,14 @@ function EducationInfo() {
         <h1 className="card__heading">Education Details</h1>
       </span>
       <form onSubmit={handleSubmit(educationInfo)} className="details__form">
-        
-          <div className="form__row">
+        <div className="form__row">
           <Input
-           className="half-width" 
             label="Type"
             helperText={errors.type ? errors.type.message : null}
             {...register("type", { required: "Type is required" })}
           />
-          </div>
-          <div className="form__row">
-        
+        </div>
+        <div className="form__row">
           <Input
             label="University"
             helperText={errors.university ? errors.university.message : null}
@@ -51,19 +49,18 @@ function EducationInfo() {
             helperText={errors.degree ? errors.degree.message : null}
             {...register("degree", { required: "Degree is required" })}
           />
-          
         </div>
-      
+
         <div className="form__row">
-          <DatePicker
-          className="half-widthdate" 
+          <Select
+            items={years}
             label="Start Year"
             type="number"
             helperText={errors.startYear ? errors.startYear.message : null}
             {...register("startYear", { required: "Start Year is required" })}
           />
-          <DatePicker
-          className="half-widthdate" 
+          <Select
+            items={years}
             label="End Year"
             type="number"
             helperText={errors.endYear ? errors.endYear.message : null}
@@ -71,16 +68,19 @@ function EducationInfo() {
           />
         </div>
         <div className="form__buttons">
-        <Button
-          type="button"
-          className="back-button"
-          onClick={() => navigate("personal-info")}
-          >Back</Button>
-        <Button type="submit" className="next-button">
-          Next
-        </Button>
-  
-       </div>
+          <span>
+            <Button
+              type="button"
+              variant="outlined"
+              onClick={() => navigate("/user-details/personal-info")}
+            >
+              Back
+            </Button>
+          </span>
+          <span>
+            <Button type="submit">Next</Button>
+          </span>
+        </div>
       </form>
     </div>
   );

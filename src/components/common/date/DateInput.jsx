@@ -6,7 +6,7 @@ import dayjs from "dayjs";
 import "./dateInput.scss";
 
 const DateInput = React.forwardRef(function (
-  { label, value, onChange, ...props },
+  { label, helperText, value, onChange, ...props },
   ref
 ) {
   const handleDateChange = (newValue) => {
@@ -23,6 +23,11 @@ const DateInput = React.forwardRef(function (
         onChange={handleDateChange}
         label={label}
         format="LL"
+        slotProps={{
+          textField: {
+            helperText: helperText,
+          },
+        }}
         className="date__picker"
         {...props}
       />

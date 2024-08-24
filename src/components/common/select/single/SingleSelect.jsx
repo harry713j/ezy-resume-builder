@@ -1,10 +1,16 @@
 import React from "react";
-import { FormControl, MenuItem, Select, InputLabel } from "@mui/material";
+import {
+  FormControl,
+  MenuItem,
+  Select,
+  InputLabel,
+  FormHelperText,
+} from "@mui/material";
 
 import "./singleSelect.scss";
 
 const SingleSelect = React.forwardRef(function (
-  { label, items, ...props },
+  { label, items, helperText, ...props },
   ref
 ) {
   return (
@@ -25,6 +31,7 @@ const SingleSelect = React.forwardRef(function (
           </MenuItem>
         ))}
       </Select>
+      <FormHelperText>{helperText}</FormHelperText>
     </FormControl>
   );
 });
