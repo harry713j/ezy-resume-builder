@@ -20,7 +20,7 @@ function PersonalInfo() {
     // handle the data coming from the form by dispatching them to store
     dispatch(addPersonalInfo(data));
     // then navigate it to next form
-    navigate("education-info");
+    navigate("education");
   };
 
   return (

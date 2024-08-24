@@ -5,8 +5,11 @@ import { SignUp, LogIn, Templates, UserDetails, LandingPage } from "./pages";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store/store.js";
-import { PersonalInfo } from "./components/index.js";
+import { PersonalInfo, EducationInfo,WorkExperience, Skills,Projects, Awards} from "./components/index.js";
 import About from "./pages/About/About.jsx";
+
+
+
 
 const router = createBrowserRouter([
   {
@@ -34,6 +37,26 @@ const router = createBrowserRouter([
           {
             path: "personal-info",
             element: <PersonalInfo />,
+          },
+          {
+            path: "education",
+            element: <EducationInfo />, 
+          },
+          {
+            path: "experience",
+            element: <WorkExperience />, 
+          },
+          {
+            path: "skills",
+            element: <Skills />, 
+          },
+          {
+            path: "projects",
+            element: <Projects/>, 
+          },
+          {
+            path: "achievements",
+            element: <Awards/>, 
           },
         ],
       },

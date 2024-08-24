@@ -1,0 +1,131 @@
+// @use "../../../styles/colors" as colors;
+// @use "../../../styles/fonts" as *;
+// @use "../../../styles/breakpoints" as *;
+
+// .details__card {
+//   background-color: #fff;
+//   padding: 1.75rem 2rem;
+//   padding-bottom: 2.5rem;
+//   border-radius: 4px;
+//   box-shadow: 0 0 2px rgba($color: colors.$black, $alpha: 0.5);
+
+//   & .heading__container {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     border-bottom: 1px solid rgba($color: colors.$black, $alpha: 0.7);
+//     margin-bottom: 2rem;
+//     padding-bottom: 1rem;
+//   }
+
+//   & .card__heading {
+//     @include font_montserrat(600, 24px);
+//     color: rgba($color: colors.$black, $alpha: 0.9);
+//   }
+
+//   & .skip-button,
+//   & .add-skill-button {
+//     background: none;
+//     border: none;
+//     color: colors.$primary_blue;
+//     cursor: pointer;
+//     text-decoration: none;
+//     font-size: 1rem;
+//   }
+
+//   & .details__form {
+//     display: flex;
+//     flex-direction: column;
+//     gap: 1.5rem;
+
+//     & .form__row {
+//       display: flex;
+//       align-items: center;
+//       gap: 3rem;
+
+//       & .full-width {
+//         flex: 1; 
+//       }
+//     }
+
+//     & .form__buttons {
+//       display: flex;
+//       justify-content: flex-end;
+//       gap: 1rem; 
+
+//       & .next-button {
+//         background-color: colors.$primary_blue;
+//         color: #fff;
+//         border: 1px solid colors.$primary_blue;
+//         padding: 0.6rem 1.5rem;
+//       }
+//     }
+//   }
+// }
+
+
+@use "../../../styles/colors" as colors;
+@use "../../../styles/fonts" as *;
+@use "../../../styles/breakpoints" as *;
+
+.details__card {
+  background-color: #fff;
+  padding: 1.75rem 2rem;
+  padding-bottom: 2.5rem;
+  border-radius: 4px;
+  box-shadow: 0 0 2px rgba($color: colors.$black, $alpha: 0.5);
+
+  & .heading__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba($color: colors.$black, $alpha: 0.7);
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+  }
+
+  & .card__heading {
+    @include font_montserrat(600, 24px);
+    color: rgba($color: colors.$black, $alpha: 0.9);
+  }
+
+  & .add-skill-button {
+    background: none;
+    border: none;
+    color: colors.$primary_blue;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+
+  & .details__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    & .form__row {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+
+      & .half-width {
+        flex: 0.5; 
+      }
+    }
+
+    & .form__buttons {
+      display: flex;
+      justify-content: flex-end;
+      gap: 1rem; 
+
+      & .next-button {
+        background-color: colors.$primary_blue;
+        color: #fff;
+        border: 1px solid colors.$primary_blue;
+        padding: 0.6rem 1.5rem;
+      }
+    }
+  }
+}
+
+
