@@ -1,12 +1,12 @@
 import React from "react";
 import "./projects.scss";
-import { Input, Button, MultiSelect, TextArea } from "../../index";
+import { Input, Button, MultiSelect, TextArea, IconButton } from "../../index";
 import { useForm, Controller, useFieldArray } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addProjects } from "../../../store/slices/userDetailsSlice.js";
 import { technologies } from "../../../constants/constants.js";
-import { Add, DoubleArrow } from "@mui/icons-material";
+import { Add, DoubleArrow, Delete } from "@mui/icons-material";
 
 function Projects() {
   const {
@@ -113,14 +113,14 @@ function Projects() {
             </div>
             <div className="remove__button">
               <span>
-                <Button
+                <IconButton
                   type="button"
-                  variant="outlined"
-                  color="error"
+                  color={"#ff3b30"}
+                  Icon={Delete}
                   onClick={() => remove(index)}
                 >
-                  remove
-                </Button>
+                  Remove
+                </IconButton>
               </span>
             </div>
           </section>

@@ -1,11 +1,11 @@
 import React from "react";
 import "./WorkExperience.scss";
-import { Input, Button, DatePicker, TextArea } from "../../index";
+import { Input, Button, DatePicker, TextArea, IconButton } from "../../index";
 import { useForm, useFieldArray } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addWorkExperience } from "../../../store/slices/userDetailsSlice.js";
-import { DoubleArrow, Add } from "@mui/icons-material";
+import { DoubleArrow, Add, Delete } from "@mui/icons-material";
 
 function WorkExperience() {
   const {
@@ -108,14 +108,14 @@ function WorkExperience() {
             </div>
             <div className="remove__button">
               <span>
-                <Button
+                <IconButton
                   type="button"
-                  variant="outlined"
-                  color="error"
+                  color={"#ff3b30"}
+                  Icon={Delete}
                   onClick={() => remove(index)}
                 >
-                  remove
-                </Button>
+                  Remove
+                </IconButton>
               </span>
             </div>
           </section>

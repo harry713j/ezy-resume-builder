@@ -1,11 +1,11 @@
 import React from "react";
 import "./awards.scss";
-import { Input, Button, DatePicker, TextArea } from "../../index";
+import { Input, Button, DatePicker, TextArea, IconButton } from "../../index";
 import { useForm, useFieldArray } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addAchievement } from "../../../store/slices/userDetailsSlice.js";
-import { Add, DoubleArrow } from "@mui/icons-material";
+import { Add, DoubleArrow, Delete } from "@mui/icons-material";
 
 function Awards() {
   const {
@@ -96,14 +96,14 @@ function Awards() {
             </div>
             <div className="remove__button">
               <span>
-                <Button
+                <IconButton
                   type="button"
-                  variant="outlined"
-                  color="error"
+                  color={"#ff3b30"}
+                  Icon={Delete}
                   onClick={() => remove(index)}
                 >
-                  remove
-                </Button>
+                  Remove
+                </IconButton>
               </span>
             </div>
           </section>

@@ -42,7 +42,8 @@
         justify-content: flex-end;
 
         & span {
-          width: 12%;
+          display: flex;
+          justify-content: flex-end;
         }
       }
     }
