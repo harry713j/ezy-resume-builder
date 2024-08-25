@@ -23,15 +23,6 @@ const Navbar = () => {
           </NavLink>
 
           <NavLink
-            to="/my-resumes"
-            className={({ isActive }) =>
-              `${isActive ? "active" : "not-active"} navbar-item`
-            }
-          >
-            My Resumes
-          </NavLink>
-
-          <NavLink
             to="/about"
             className={({ isActive }) =>
               `${isActive ? "active" : "not-active"} navbar-item`
