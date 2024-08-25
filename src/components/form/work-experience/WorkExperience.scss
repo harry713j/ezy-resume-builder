@@ -25,13 +25,26 @@
 
   & .details__form {
     display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
 
-    & .form__row {
+    & .form__container {
       display: flex;
-      align-items: center;
-      gap: 3rem;
+      flex-direction: column;
+      gap: 1.5rem;
+
+      & .form__row {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+      }
+
+      & .remove__button {
+        display: flex;
+        justify-content: flex-end;
+
+        & span {
+          width: 12%;
+        }
+      }
     }
 
     & .form__buttons {

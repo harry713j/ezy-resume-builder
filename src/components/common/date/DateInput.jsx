@@ -6,7 +6,7 @@ import dayjs from "dayjs";
 import "./dateInput.scss";
 
 const DateInput = React.forwardRef(function (
-  { label, helperText, value, onChange, ...props },
+  { label, helperText = " ", value, onChange, ...props },
   ref
 ) {
   const handleDateChange = (newValue) => {

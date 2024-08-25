@@ -1,7 +1,7 @@
 import React from "react";
 import "./awards.scss";
 import { Input, Button, DatePicker, TextArea } from "../../index";
-import { useForm } from "react-hook-form";
+import { useForm, useFieldArray } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addAchievement } from "../../../store/slices/userDetailsSlice.js";
@@ -11,11 +11,27 @@ function Awards() {
   const {
     register,
     handleSubmit,
-
+    control,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    defaultValues: {
+      awards: [
+        {
+          organizationName: "",
+          awardTitle: "",
+          dateOfAcquisition: null,
+          description: "",
+        },
+      ],
+    },
+  });
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  const { fields, append, remove } = useFieldArray({
+    control,
+    name: "awards",
+  });
 
   const awardsInfo = (data) => {
     console.log(data);
@@ -36,45 +52,77 @@ function Awards() {
         </Button>
       </span>
       <form onSubmit={handleSubmit(awardsInfo)} className="details__form">
-        <div className="form__row">
-          <Input
-            label="Name of Organization"
-            helperText={
-              errors.organizationName ? errors.organizationName.message : null
-            }
-            {...register(`organizationName`, {
-              required: "Name of Organization is required",
-            })}
-          />
-        </div>
-        <div className="form__row">
-          <Input
-            label="Award Title"
-            helperText={errors.awardTitle ? errors.awardTitle.message : null}
-            {...register(`awardTitle`, { required: "Award Title is required" })}
-          />
-          <DatePicker
-            label="Date of Acquisition"
-            helperText={
-              errors.dateOfAcquisition ? errors.dateOfAcquisition.message : null
-            }
-            {...register(`dateOfAcquisition`, {
-              required: "Date of Acquisition is required",
-            })}
-          />
-        </div>
-        <div className="form__row">
-          <TextArea
-            label="Description"
-            helperText={errors.description ? errors.description.message : null}
-            {...register(`description`, {
-              required: "Description is required",
-            })}
-          />
-        </div>
+        {fields.map((field, index) => (
+          <section key={field.id} className="form__container">
+            <div className="form__row">
+              <Input
+                label="Name of Organization"
+                helperText={
+                  errors.awards?.[index]?.organizationName?.message || null
+                }
+                {...register(`awards.${index}.organizationName`, {
+                  required: "Name of Organization is required",
+                })}
+              />
+            </div>
+            <div className="form__row">
+              <Input
+                label="Award Title"
+                helperText={errors.awards?.[index]?.awardTitle?.message || null}
+                {...register(`awards.${index}.awardTitle`, {
+                  required: "Award Title is required",
+                })}
+              />
+              <DatePicker
+                label="Date of Acquisition"
+                helperText={
+                  errors.awards?.[index]?.dateOfAcquisition?.message || null
+                }
+                {...register(`awards.${index}.dateOfAcquisition`, {
+                  required: "Date of Acquisition is required",
+                })}
+              />
+            </div>
+            <div className="form__row">
+              <TextArea
+                label="Description"
+                helperText={
+                  errors.awards?.[index]?.description?.message || null
+                }
+                {...register(`awards.${index}.description`, {
+                  required: "Description is required",
+                })}
+              />
+            </div>
+            <div className="remove__button">
+              <span>
+                <Button
+                  type="button"
+                  variant="outlined"
+                  color="error"
+                  onClick={() => remove(index)}
+                >
+                  remove
+                </Button>
+              </span>
+            </div>
+          </section>
+        ))}
 
-        <Button type="button" variant="text" startIcon={<Add />}>
-          Add Experience
+        <Button
+          type="button"
+          variant="text"
+          startIcon={<Add />}
+          onClick={() => {
+            append({
+              organizationName: "",
+              awardTitle: "",
+              dateOfAcquisition: null,
+              description: "",
+            });
+          }}
+        >
+          Add more achievements
         </Button>
         <div className="form__buttons">
           <span>

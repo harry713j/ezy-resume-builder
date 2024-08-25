@@ -4,7 +4,7 @@ import { Visibility, VisibilityOff } from "@mui/icons-material";
 import "./input.scss";
 
 const Input = React.forwardRef(function (
-  { label, type = "text", ...props },
+  { label, type = "text", helperText = " ", ...props },
   ref
 ) {
   const [showPassword, setShowPassword] = useState(false);

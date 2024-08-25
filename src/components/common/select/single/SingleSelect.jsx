@@ -10,7 +10,7 @@ import {
 import "./singleSelect.scss";
 
 const SingleSelect = React.forwardRef(function (
-  { label, items, helperText, ...props },
+  { label, items, helperText = " ", ...props },
   ref
 ) {
   return (

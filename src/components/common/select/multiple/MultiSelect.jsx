@@ -13,7 +13,7 @@ import { Clear } from "@mui/icons-material";
 import "./multiSelect.scss";
 
 const MultiSelect = React.forwardRef(function (
-  { label, items, helperText, value, onChange, ...props },
+  { label, items, helperText = " ", value, onChange, ...props },
   ref
 ) {
   const handleDelete = (chipToDelete) => {

@@ -1,7 +1,7 @@
 import React from "react";
 import "./projects.scss";
 import { Input, Button, MultiSelect, TextArea } from "../../index";
-import { useForm, Controller } from "react-hook-form";
+import { useForm, Controller, useFieldArray } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addProjects } from "../../../store/slices/userDetailsSlice.js";
@@ -14,9 +14,25 @@ function Projects() {
     handleSubmit,
     control,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    defaultValues: {
+      projects: [
+        {
+          projectName: "",
+          projectLink: "",
+          tools: [],
+          projectSummary: "",
+        },
+      ],
+    },
+  });
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  const { fields, append, remove } = useFieldArray({
+    control,
+    name: "projects",
+  });
 
   const projectsInfo = (data) => {
     console.log(data);
@@ -37,59 +53,93 @@ function Projects() {
         </Button>
       </span>
       <form onSubmit={handleSubmit(projectsInfo)} className="details__form">
-        <div className="form__row">
-          <Input
-            label="Project Name"
-            helperText={errors.projectName ? errors.projectName.message : null}
-            {...register(`projectName`, {
-              required: "Project Name is required",
-            })}
-          />
-          <Input
-            label="Link to Project"
-            helperText={errors.projectLink ? errors.projectLink.message : null}
-            {...register(`projectLink`, {
-              validate: {
-                matchPattern: (value) =>
-                  /^(https?:\/\/)?([a-zA-Z0-9_-]+\.)+[a-zA-Z]{2,}(:\d+)?(\/[a-zA-Z0-9#?&=_-]*)*\/?$/.test(
-                    value
-                  ) || "Please provide a valid URL",
-              },
-            })}
-          />
-        </div>
-        <div className="form__row">
-          <Controller
-            name="tools"
-            defaultValue={undefined}
-            control={control}
-            render={({ field }) => (
-              <MultiSelect
-                label="Tools and Tech Used"
-                items={technologies}
-                helperText={errors.tools ? errors.tools.message : null}
-                {...field}
-                {...register(`tools`, {
-                  required: "Tools and Tech Used is required",
+        {fields.map((field, index) => (
+          <section key={field.id} className="form__container">
+            <div className="form__row">
+              <Input
+                label="Project Name"
+                helperText={
+                  errors.projects?.[index]?.projectName?.message || null
+                }
+                {...register(`projects.${index}.projectName`, {
+                  required: "Project Name is required",
                 })}
               />
-            )}
-          />
-        </div>
-        <div className="form__row">
-          <TextArea
-            label="Project Summary"
-            helperText={
-              errors.projectSummary ? errors.projectSummary.message : null
-            }
-            {...register(`projectSummary`, {
-              required: "Project Summary is required",
-            })}
-          />
-        </div>
+              <Input
+                label="Link to Project"
+                helperText={
+                  errors.projects?.[index]?.projectLink?.message || null
+                }
+                {...register(`projects.${index}.projectLink`, {
+                  validate: {
+                    matchPattern: (value) =>
+                      /^(https?:\/\/)?([a-zA-Z0-9_-]+\.)+[a-zA-Z]{2,}(:\d+)?(\/[a-zA-Z0-9#?&=_-]*)*\/?$/.test(
+                        value
+                      ) || "Please provide a valid URL",
+                  },
+                })}
+              />
+            </div>
+            <div className="form__row">
+              <Controller
+                name="tools"
+                defaultValue={undefined}
+                control={control}
+                render={({ field }) => (
+                  <MultiSelect
+                    label="Tools and Tech Used"
+                    items={technologies}
+                    helperText={
+                      errors.projects?.[index]?.tools?.message || null
+                    }
+                    {...field}
+                    {...register(`projects.${index}.tools`, {
+                      required: "Tools and Tech Used is required",
+                    })}
+                  />
+                )}
+              />
+            </div>
+            <div className="form__row">
+              <TextArea
+                label="Project Summary"
+                helperText={
+                  errors.projects?.[index]?.projectSummary?.message || null
+                }
+                {...register(`projects.${index}.projectSummary`, {
+                  required: "Project Summary is required",
+                })}
+              />
+            </div>
+            <div className="remove__button">
+              <span>
+                <Button
+                  type="button"
+                  variant="outlined"
+                  color="error"
+                  onClick={() => remove(index)}
+                >
+                  remove
+                </Button>
+              </span>
+            </div>
+          </section>
+        ))}
 
-        <Button type="button" variant="text" startIcon={<Add />}>
-          Add Experience
+        <Button
+          type="button"
+          variant="text"
+          startIcon={<Add />}
+          onClick={() => {
+            append({
+              projectName: "",
+              projectLink: "",
+              tools: [],
+              projectSummary: "",
+            });
+          }}
+        >
+          Add more projects
         </Button>
         <div className="form__buttons">
           <span>

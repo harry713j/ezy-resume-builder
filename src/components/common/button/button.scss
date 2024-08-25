@@ -4,7 +4,7 @@
 
 .button__contained {
   &.MuiButton-root {
-    @include font_space(700, 16px);
+    @include font_space(700, 14px);
     width: 100%;
     background-color: colors.$primary_blue;
     display: flex;
@@ -15,7 +15,7 @@
 .button__outlined {
   // variant="outlined"
   &.MuiButton-outlined {
-    @include font_space(700, 16px);
+    @include font_space(700, 14px);
     width: 100%;
     color: colors.$primary_blue;
     border-color: colors.$primary_blue;
@@ -27,7 +27,7 @@
 .button__text {
   //if variant is "text" then this style will apply
   &.MuiButton-text {
-    @include font_space(500, 18px);
+    @include font_space(500, 16px);
     color: colors.$primary_indigo;
   }
 }
