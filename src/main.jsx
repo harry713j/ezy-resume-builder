@@ -1,21 +1,32 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
-import { SignUp, LogIn, Templates, UserDetails, LandingPage } from "./pages";
+import {
+  SignUp,
+  LogIn,
+  Templates,
+  UserDetails,
+  LandingPage,
+  NotFoundPage,
+} from "./pages";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store/store.js";
-import { PersonalInfo, EducationInfo,WorkExperience, Skills,Projects, Awards} from "./components/index.js";
+import {
+  PersonalInfo,
+  EducationInfo,
+  WorkExperience,
+  Skills,
+  Projects,
+  Awards,
+} from "./components/index.js";
 import About from "./pages/About/About.jsx";
-
-
-
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    // errorElement: , // add error page here
+    errorElement: <NotFoundPage />,
 
     children: [
       {
@@ -40,23 +51,23 @@ const router = createBrowserRouter([
           },
           {
             path: "education",
-            element: <EducationInfo />, 
+            element: <EducationInfo />,
           },
           {
             path: "experience",
-            element: <WorkExperience />, 
+            element: <WorkExperience />,
           },
           {
             path: "skills",
-            element: <Skills />, 
+            element: <Skills />,
           },
           {
             path: "projects",
-            element: <Projects/>, 
+            element: <Projects />,
           },
           {
             path: "achievements",
-            element: <Awards/>, 
+            element: <Awards />,
           },
         ],
       },
