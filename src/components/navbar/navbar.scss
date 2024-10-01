@@ -8,6 +8,7 @@
   align-items: center;
   padding: 1rem 8.25rem;
   background: linear-gradient(colors.$sky_blue, colors.$sky_blue);
+  border-bottom: 1px solid rgba(colors.$black, 0.5);
 
   .navbar-brand {
     .navbar-logo {
@@ -40,6 +41,7 @@
 
     .login-button {
       margin-left: 1.5rem;
+      @include font_space(700, 14px);
       &.MuiButton-root {
         background-color: colors.$primary_blue;
       }

@@ -1,0 +1,214 @@
+@use "../../styles/colors" as colors;
+@use "../../styles//breakpoints" as *;
+@use "../../styles/fonts" as *;
+
+.resume {
+  background-color: rgba(255, 255, 255, 1);
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 2rem;
+  padding-bottom: 2.5rem;
+  border: 1px solid rgba($color: colors.$black, $alpha: 0.5);
+  box-shadow: 0.5px 0.5px 0.5px rgba($color: colors.$black, $alpha: 0.1);
+  gap: 2.5rem;
+  user-select: none;
+
+  .id {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    & h1 {
+      @include font_roboto(600, 2.5em);
+      color: colors.$black;
+    }
+
+    & p {
+      @include font_roboto(500, 1em);
+      color: rgba(colors.$black, 0.6);
+    }
+  }
+
+  .about__me {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    .main__details {
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      gap: 1rem;
+
+      .objective {
+        @include font_roboto(400, 14px);
+        color: rgba($color: colors.$black, $alpha: 1);
+      }
+
+      .work {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+
+        & h4 {
+          @include font_roboto(500, 1em);
+          color: colors.$black;
+          text-transform: capitalize;
+        }
+
+        .work__detail {
+          margin-top: 0.5rem;
+          .designation {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+
+            & h5 {
+              @include font_roboto(700, 0.93em);
+              color: rgba($color: colors.$black, $alpha: 1);
+              text-transform: capitalize;
+            }
+            & p {
+              @include font_roboto(400, 0.93em);
+              color: rgba($color: colors.$black, $alpha: 1);
+              text-transform: capitalize;
+            }
+          }
+          .period {
+            @include font_roboto(400, 0.87rem);
+            color: rgba($color: colors.$black, $alpha: 0.5);
+          }
+          .what__work {
+            @include font_roboto(400, 0.875rem);
+            display: inline-block;
+            color: colors.$black;
+            margin-top: 0.4rem;
+            padding-left: 0.25rem;
+          }
+        }
+      }
+
+      .education {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        & h4 {
+          @include font_roboto(500, 1em);
+          color: colors.$black;
+        }
+        .education__detail {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+
+          .degree {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+
+            & h5 {
+              @include font_roboto(700, 0.93em);
+              color: rgba($color: colors.$black, $alpha: 1);
+              text-transform: capitalize;
+            }
+            & p {
+              @include font_roboto(400, 0.93em);
+              color: rgba($color: colors.$black, $alpha: 1);
+              text-transform: capitalize;
+            }
+          }
+
+          & p {
+            @include font_roboto(400, 0.87rem);
+            color: rgba($color: colors.$black, $alpha: 0.5);
+          }
+        }
+      }
+    }
+    .side__details {
+      width: 30%;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      .contact {
+        & h4 {
+          @include font_roboto(500, 1em);
+          color: colors.$black;
+        }
+        .all__contacts {
+          display: flex;
+          flex-direction: column;
+          margin-top: 0.5rem;
+          gap: 0.25rem;
+
+          & span {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+
+            & span {
+              color: colors.$black;
+
+              & svg {
+                width: 1rem;
+                height: 1rem;
+              }
+            }
+
+            & p {
+              @include font_roboto(400, 0.875em);
+              color: colors.$black;
+            }
+          }
+        }
+      }
+      .skills {
+        & h4 {
+          @include font_roboto(500, 1em);
+          color: colors.$black;
+        }
+
+        .all__skills {
+          display: flex;
+          flex-direction: column;
+          gap: 0.25rem;
+          margin-top: 0.5rem;
+          padding-left: 0.5rem;
+
+          & li {
+            @include font_roboto(400, 0.875em);
+            color: colors.$black;
+            list-style-type: square;
+          }
+        }
+      }
+      .achievements {
+        & h4 {
+          @include font_roboto(500, 1em);
+          color: colors.$black;
+        }
+        .achievement__details {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          margin-top: 0.5rem;
+
+          & h5 {
+            @include font_roboto(600, 0.93em);
+            color: rgba($color: colors.$black, $alpha: 1);
+            text-transform: capitalize;
+          }
+
+          & p {
+            @include font_roboto(400, 0.93em);
+            color: rgba($color: colors.$black, $alpha: 0.7);
+            text-transform: capitalize;
+          }
+        }
+      }
+    }
+  }
+}
