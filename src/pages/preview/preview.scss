@@ -1,0 +1,30 @@
+@use "../../styles/_colors" as colors;
+@use "../../styles/_fonts" as *;
+@use "../../styles/breakpoints" as *;
+
+.preview__page {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  .resume__container {
+    width: 65%;
+  }
+  .button__group {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding-top: 15vh;
+
+    .edit__button {
+      width: 30%;
+      @include font_space(700, 14px);
+    }
+    .save__button {
+      width: 30%;
+      @include font_space(700, 14px);
+      background-color: colors.$light_green;
+    }
+  }
+}

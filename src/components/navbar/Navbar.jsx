@@ -2,8 +2,10 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Button } from "../index.js";
 import "./navbar.scss";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
+  const auth = useSelector((state) => state.auth);
   return (
     <div>
       <nav className="navbar">
@@ -31,7 +33,7 @@ const Navbar = () => {
             About Us
           </NavLink>
           <Button component={Link} to="/login" className="login-button">
-            LoG IN
+            {auth.authStatus ? "Log out" : "Log in"}
           </Button>
         </div>
       </nav>

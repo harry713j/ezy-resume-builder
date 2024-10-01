@@ -8,6 +8,7 @@ import {
   UserDetails,
   LandingPage,
   NotFoundPage,
+  Preview,
 } from "./pages";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Provider } from "react-redux";
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/preview",
+        element: <Preview />,
       },
       {
         path: "/user-details",
