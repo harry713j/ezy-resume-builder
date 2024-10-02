@@ -59,7 +59,7 @@
 
         .work__detail__3 {
           margin-top: 0.5rem;
-          .designation {
+          .designation__3 {
             display: flex;
             align-items: center;
             gap: 0.25rem;
@@ -79,6 +79,20 @@
             @include font_roboto(400, 0.87rem);
             color: rgba($color: colors.$black, $alpha: 0.5);
           }
+
+          .tools {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 0.25rem;
+
+            & p {
+              @include font_roboto(400, 12px);
+              color: colors.$black;
+              text-transform: capitalize;
+            }
+          }
+
           .what__work__3 {
             @include font_roboto(400, 0.875rem);
             display: inline-block;
@@ -207,6 +221,11 @@
             @include font_roboto(400, 0.93em);
             color: rgba($color: colors.$black, $alpha: 0.7);
             text-transform: capitalize;
+          }
+
+          & .achievement__description {
+            @include font_roboto(300, 12px);
+            color: rgba($color: colors.$black, $alpha: 0.9);
           }
         }
       }

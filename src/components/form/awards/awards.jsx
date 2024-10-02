@@ -35,7 +35,7 @@ function Awards() {
 
   const awardsInfo = (data) => {
     console.log(data);
-    dispatch(addAchievement(data));
+    dispatch(addAchievement(data.awards));
     navigate("/preview");
   };
 
@@ -60,27 +60,21 @@ function Awards() {
                 helperText={
                   errors.awards?.[index]?.organizationName?.message || null
                 }
-                {...register(`awards.${index}.organizationName`, {
-                  required: "Name of Organization is required",
-                })}
+                {...register(`awards.${index}.organizationName`)}
               />
             </div>
             <div className="form__row">
               <Input
                 label="Award Title"
                 helperText={errors.awards?.[index]?.awardTitle?.message || null}
-                {...register(`awards.${index}.awardTitle`, {
-                  required: "Award Title is required",
-                })}
+                {...register(`awards.${index}.awardTitle`)}
               />
               <DatePicker
                 label="Date of Acquisition"
                 helperText={
                   errors.awards?.[index]?.dateOfAcquisition?.message || null
                 }
-                {...register(`awards.${index}.dateOfAcquisition`, {
-                  required: "Date of Acquisition is required",
-                })}
+                {...register(`awards.${index}.dateOfAcquisition`)}
               />
             </div>
             <div className="form__row">
@@ -89,9 +83,7 @@ function Awards() {
                 helperText={
                   errors.awards?.[index]?.description?.message || null
                 }
-                {...register(`awards.${index}.description`, {
-                  required: "Description is required",
-                })}
+                {...register(`awards.${index}.description`)}
               />
             </div>
             <div className="remove__button">
@@ -125,7 +117,7 @@ function Awards() {
           Add more achievements
         </Button>
         <div className="form__buttons">
-          <span>
+          {/* <span>
             <Button
               type="button"
               variant="outlined"
@@ -133,7 +125,7 @@ function Awards() {
             >
               Back
             </Button>
-          </span>
+          </span> */}
           <span>
             <Button type="submit">Preview</Button>
           </span>

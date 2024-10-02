@@ -36,7 +36,7 @@ function WorkExperience() {
 
   const workExperience = (data) => {
     console.log(data);
-    dispatch(addWorkExperience(data));
+    dispatch(addWorkExperience(data.experience));
     navigate("/user-details/skills");
   };
 
@@ -90,9 +90,7 @@ function WorkExperience() {
                 helperText={
                   errors.experience?.[index]?.endDate?.message || null
                 }
-                {...register(`experience.${index}.endDate`, {
-                  required: "End Date is required",
-                })}
+                {...register(`experience.${index}.endDate`)}
               />
             </div>
             <div className="form__row">
@@ -138,7 +136,7 @@ function WorkExperience() {
           Add more Experience
         </Button>
         <div className="form__buttons">
-          <span>
+          {/* <span>
             <Button
               type="button"
               variant="outlined"
@@ -146,7 +144,7 @@ function WorkExperience() {
             >
               Back
             </Button>
-          </span>
+          </span> */}
           <span>
             <Button type="submit">Next</Button>
           </span>
