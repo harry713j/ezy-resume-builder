@@ -1,8 +1,18 @@
-# React + Vite
+# EZY Resume Builder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Tools Used
 
-Currently, two official plugins are available:
+- React
+- Redux Toolkit
+- React-Hook-Form
+- Firebase
+- Material UI
+- SASS
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Features
+
+- Authentication with Firebase and google authentication
+- Beautiful UI with MUI
+- Global State with Redux
+- CSS style with Scss
+- Holistic form handling with react-hook-form
