@@ -36,7 +36,7 @@ function Projects() {
 
   const projectsInfo = (data) => {
     console.log(data);
-    dispatch(addProjects(data));
+    dispatch(addProjects(data.projects));
     navigate("/user-details/achievements");
   };
 
@@ -82,22 +82,21 @@ function Projects() {
             </div>
             <div className="form__row">
               <Controller
-                name="tools"
-                defaultValue={undefined}
+                name={`projects.${index}.tools`}
                 control={control}
-                render={({ field }) => (
-                  <MultiSelect
-                    label="Tools and Tech Used"
-                    items={technologies}
-                    helperText={
-                      errors.projects?.[index]?.tools?.message || null
-                    }
-                    {...field}
-                    {...register(`projects.${index}.tools`, {
-                      required: "Tools and Tech Used is required",
-                    })}
-                  />
-                )}
+                defaultValue={[]}
+                render={({ field }) => {
+                  return (
+                    <MultiSelect
+                      label="Tools and Tech Used"
+                      items={technologies}
+                      helperText={
+                        errors.projects?.[index]?.tools?.message || null
+                      }
+                      {...field}
+                    />
+                  );
+                }}
               />
             </div>
             <div className="form__row">
@@ -142,7 +141,7 @@ function Projects() {
           Add more projects
         </Button>
         <div className="form__buttons">
-          <span>
+          {/* <span>
             <Button
               type="button"
               variant="outlined"
@@ -150,7 +149,7 @@ function Projects() {
             >
               Back
             </Button>
-          </span>
+          </span> */}
           <span>
             <Button type="submit">Next</Button>
           </span>

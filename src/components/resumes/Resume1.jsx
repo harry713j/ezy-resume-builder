@@ -2,76 +2,66 @@ import React from "react";
 import "./resume1.scss";
 import { Email, GitHub, Language, LinkedIn, Phone } from "@mui/icons-material";
 
-// This is where the style and data of the resume template - 1 will be written
-function Resume1() {
+function Resume1({ details }) {
+  const {
+    personalInfo,
+    educationDetails,
+    workExperience,
+    skills,
+    projects,
+    achievements,
+  } = details;
+
   return (
-    <div className="resume">
+    <div className="resume__1">
       <section className="id">
-        <h1>Javier Villa</h1>
-        <p>UI/UX Designer</p>
+        <h1>{`${personalInfo.firstName.charAt(0).toUpperCase() + personalInfo.firstName.slice(1).toLowerCase()} ${personalInfo.lastName.charAt(0).toUpperCase() + personalInfo.lastName.slice(1).toLowerCase()}`}</h1>
+        <p>{personalInfo.jobTitle}</p>
       </section>
       <section className="about__me">
         <div className="main__details">
           <span className="objective">
-            <p>
-              The error occurs because the file system you&apos;re using is
-              case-sensitive for file paths, meaning it treats errorPage and
-              ErrorPage as two different directories. This issue is common on
-              case-sensitive file systems (like those on Linux) or when tools
-              (such as TypeScript or Webpack) are configured to treat paths in a
-              case-sensitive manner.
-            </p>
+            <p>{personalInfo.objective}</p>
           </span>
           <span className="work">
             <h4>Work experience</h4>
-            <div className="work__detail">
-              <span className="designation">
-                <h5>UX Design Intern</h5>
-                <p>@ABC company</p>
-              </span>
-              <p className="period">Jan 2023 - present</p>
-              <span className="what__work">
-                <p>
-                  In JavaScript, a generator is a special type of function that
-                  can pause its execution and later resume from where it paused.
-                  It is defined using the function* syntax and works with the
-                  yield keyword. Generators return an iterator object, which can
-                  be used to iterate through values one at a time.
-                </p>
-              </span>
-            </div>
-            <div className="work__detail">
-              <span className="designation">
-                <h5>UX Design Intern</h5>
-                <p>@ABC company</p>
-              </span>
-              <p className="period">Jan 2023 - present</p>
-              <span className="what__work">
-                <p>
-                  In JavaScript, a generator is a special type of function that
-                  can pause its execution and later resume from where it paused.
-                  It is defined using the function* syntax and works with the
-                  yield keyword. Generators return an iterator object, which can
-                  be used to iterate through values one at a time.
-                </p>
-              </span>
-            </div>
+            {workExperience.length > 0
+              ? workExperience.map((work, _) => (
+                  <div className="work__detail" key={_}>
+                    <span className="designation">
+                      <h5>{work.jobTitle}</h5>
+                      <p>{`@${work.organizationName}`}</p>
+                    </span>
+                    <p className="period">{`${new Date(work.startDate).toString().split(" ")[1]} ${new Date(work.startDate).toString().split(" ")[3]} - ${work.endDate ? new Date(work.endDate).toString().split(" ")[1] + " " + new Date(work.endDate).toString().split(" ")[3] : "Present"}`}</p>
+                    <span className="what__work">
+                      <p>{work.jobResponsibility}</p>
+                    </span>
+                  </div>
+                ))
+              : projects.map((project, _) => (
+                  <div className="work__detail" key={_}>
+                    <span className="designation">
+                      <h5>{project.projectName}</h5>
+                      <p>{` `}</p>
+                    </span>
+                    <p className="period">{project.projectLink}</p>
+                    <span className="tools">
+                      <p>{project.tools.join(", ")}</p>
+                    </span>
+                    <span className="what__work">
+                      <p>{project.projectSummary}</p>
+                    </span>
+                  </div>
+                ))}
           </span>
           <span className="education">
             <h4>Education</h4>
             <div className="education__detail">
               <span className="degree">
-                <h5>Bsc</h5>
-                <p>@University of design</p>
+                <h5>{`${educationDetails.type} ${educationDetails.degree}`}</h5>
+                <p>{`@${educationDetails.university}`}</p>
               </span>
-              <p>Jan 2018 - July 2022</p>
-            </div>
-            <div className="education__detail">
-              <span className="degree">
-                <h5>Bsc</h5>
-                <p>@University of design</p>
-              </span>
-              <p>Jan 2018 - July 2022</p>
+              <p>{`${educationDetails.startYear} - ${educationDetails.endYear > new Date().getFullYear() ? "Present" : educationDetails.endYear}`}</p>
             </div>
           </span>
         </div>
@@ -79,59 +69,66 @@ function Resume1() {
           <span className="contact">
             <h4>Contact</h4>
             <span className="all__contacts">
-              <span>
+              {personalInfo.website && (
                 <span>
-                  <Language />
+                  <span>
+                    <Language />
+                  </span>
+                  <p>{personalInfo.website}</p>
                 </span>
-                <p>ninapatel.design</p>
-              </span>
+              )}
               <span>
                 <span>
                   <Email />
                 </span>
-                <p>ninapatel@gmail.com</p>
+                <p>{personalInfo.email}</p>
               </span>
               <span>
                 <span>
                   <Phone />
                 </span>
-                <p>+91 7589389365</p>
+                <p>{personalInfo.mobile}</p>
               </span>
-              <span>
+              {personalInfo.linkedIn && (
                 <span>
-                  <LinkedIn />
+                  <span>
+                    <LinkedIn />
+                  </span>
+                  <p>{personalInfo.linkedIn}</p>
                 </span>
-                <p>Nina Patel</p>
-              </span>
-              <span>
+              )}
+              {personalInfo.github && (
                 <span>
-                  <GitHub />
+                  <span>
+                    <GitHub />
+                  </span>
+                  <p>{personalInfo.github}</p>
                 </span>
-                <p>little-nina</p>
-              </span>
+              )}
             </span>
           </span>
           <span className="skills">
             <h4>Skills</h4>
             <ul className="all__skills">
-              <li>User Research</li>
-              <li>Interaction design</li>
-              <li>Visual Design</li>
-              <li>User testing</li>
-              <li>Communication and Collaboration</li>
+              {skills.map((skill, index) => (
+                <li key={index}>{skill}</li>
+              ))}
             </ul>
           </span>
-          <span className="achievements">
-            <h4>Achievements</h4>
-            <div className="achievement__details">
-              <h5>Top 100 UI Designer</h5>
-              <p>Sept 2023, XYZ org</p>
-            </div>
-            <div className="achievement__details">
-              <h5>Top 100 UI Designer</h5>
-              <p>Sept 2023, XYZ org</p>
-            </div>
-          </span>
+          {achievements.length > 0 && (
+            <span className="achievements">
+              <h4>Achievements</h4>
+              {achievements.map((award, index) => (
+                <div className="achievement__details" key={index}>
+                  <h5>{award.awardTitle}</h5>
+                  <p>{`${new Date(award.dateOfAcquisition).toString().split(" ")[1]} ${new Date(award.dateOfAcquisition).toString().split(" ")[3]}, ${award.organizationName}`}</p>
+                  <p className="achievement__description">
+                    {award.description}
+                  </p>
+                </div>
+              ))}
+            </span>
+          )}
         </div>
       </section>
     </div>

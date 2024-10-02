@@ -68,7 +68,7 @@ function EducationInfo() {
           />
         </div>
         <div className="form__buttons">
-          <span>
+          {/* <span>
             <Button
               type="button"
               variant="outlined"
@@ -76,7 +76,7 @@ function EducationInfo() {
             >
               Back
             </Button>
-          </span>
+          </span> */}
           <span>
             <Button type="submit">Next</Button>
           </span>

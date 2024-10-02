@@ -39,12 +39,12 @@ const MultiSelect = React.forwardRef(function (
         input={<OutlinedInput id="multi-select-chip" label={label} />}
         renderValue={(selected) => (
           <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
-            {selected.map((value) => (
+            {selected.map((value, index) => (
               <Chip
                 sx={{ backgroundColor: "#E4F6FF" }}
-                key={value}
+                key={index + value}
                 label={value}
-                onDelete={handleDelete(value)}
+                onDelete={() => handleDelete(value)}
                 deleteIcon={<Clear />}
               />
             ))}
@@ -52,8 +52,12 @@ const MultiSelect = React.forwardRef(function (
         )}
         {...props}
       >
-        {items.map((item) => (
-          <MenuItem key={item} value={item} className="multiselect__item">
+        {items.map((item, index) => (
+          <MenuItem
+            key={index + item}
+            value={item}
+            className="multiselect__item"
+          >
             {item}
           </MenuItem>
         ))}

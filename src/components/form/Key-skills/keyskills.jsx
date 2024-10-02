@@ -18,8 +18,8 @@ function Skills() {
   const dispatch = useDispatch();
 
   const skillsInfo = (data) => {
-    console.log(data);
-    dispatch(addSkills(data));
+    console.log("skills: ", data);
+    dispatch(addSkills(data.skills));
     navigate("/user-details/projects");
   };
 
@@ -33,7 +33,7 @@ function Skills() {
           <Controller
             name="skills"
             control={control}
-            defaultValue={undefined}
+            defaultValue={[]}
             render={({ field }) => (
               <MultiSelect
                 label="Skills"
@@ -48,7 +48,7 @@ function Skills() {
           />
         </div>
         <div className="form__buttons">
-          <span>
+          {/* <span>
             <Button
               type="button"
               variant="outlined"
@@ -56,7 +56,7 @@ function Skills() {
             >
               Back
             </Button>
-          </span>
+          </span> */}
           <span>
             <Button type="submit">Next</Button>
           </span>
