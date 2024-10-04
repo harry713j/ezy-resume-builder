@@ -1,3 +1,5 @@
+import Skills from "./form/key-skills/keyskills.jsx";
+
 export { default as Signup } from "./signup/Signup.jsx";
 export { default as Input } from "./common/input/Input.jsx";
 export { default as Button } from "./common/button/Button.jsx";
@@ -20,4 +22,5 @@ export { default as Awards } from "./form/awards/awards.jsx";
 export { default as Resume1 } from "./resumes/Resume1.jsx";
 export { default as Resume2 } from "./resumes/Resume2.jsx";
 export { default as Resume3 } from "./resumes/Resume3.jsx";
-export { default as Skills } from "./form/key-skills/keyskills.jsx";
+
+export { Skills };
