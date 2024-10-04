@@ -20,7 +20,7 @@ import {
   Skills,
   Projects,
   Awards,
-} from "./components/index.js";
+} from "./components";
 import About from "./pages/About/About.jsx";
 
 const router = createBrowserRouter([
