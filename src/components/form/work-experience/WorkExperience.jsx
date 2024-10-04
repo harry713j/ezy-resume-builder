@@ -1,7 +1,7 @@
 import React from "react";
 import "./WorkExperience.scss";
 import { Input, Button, DatePicker, TextArea, IconButton } from "../../index";
-import { useForm, useFieldArray } from "react-hook-form";
+import { useForm, useFieldArray, Controller } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addWorkExperience } from "../../../store/slices/userDetailsSlice.js";
@@ -35,7 +35,6 @@ function WorkExperience() {
   });
 
   const workExperience = (data) => {
-    console.log(data);
     dispatch(addWorkExperience(data.experience));
     navigate("/user-details/skills");
   };
@@ -76,21 +75,34 @@ function WorkExperience() {
               />
             </div>
             <div className="form__row">
-              <DatePicker
-                label="Start Date"
-                helperText={
-                  errors.experience?.[index]?.startDate?.message || null
-                }
-                {...register(`experience.${index}.startDate`, {
-                  required: "Start Date is required",
-                })}
+              <Controller
+                control={control}
+                name={`experience.${index}.startDate`}
+                rules={{ required: "Start Date is required" }}
+                render={({ field }) => (
+                  <DatePicker
+                    label="Start Date"
+                    value={field.value}
+                    onChange={field.onChange}
+                    helperText={
+                      errors.experience?.[index]?.startDate?.message || null
+                    }
+                  />
+                )}
               />
-              <DatePicker
-                label="End Date"
-                helperText={
-                  errors.experience?.[index]?.endDate?.message || null
-                }
-                {...register(`experience.${index}.endDate`)}
+              <Controller
+                control={control}
+                name={`experience.${index}.endDate`}
+                render={({ field }) => (
+                  <DatePicker
+                    label="End Date"
+                    value={field.value}
+                    onChange={field.onChange}
+                    helperText={
+                      errors.experience?.[index]?.endDate?.message || null
+                    }
+                  />
+                )}
               />
             </div>
             <div className="form__row">

@@ -10,7 +10,7 @@ const DateInput = React.forwardRef(function (
   ref
 ) {
   const handleDateChange = (newValue) => {
-    console.log("date selected : ", newValue);
+    // console.log("date selected : ", newValue);
 
     const formattedDate = newValue ? newValue.toISOString() : null;
     onChange(formattedDate);

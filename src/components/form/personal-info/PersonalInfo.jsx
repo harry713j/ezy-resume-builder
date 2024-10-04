@@ -16,7 +16,6 @@ function PersonalInfo() {
   const dispatch = useDispatch();
 
   const personalInfo = (data) => {
-    console.log(data);
     // handle the data coming from the form by dispatching them to store
     dispatch(addPersonalInfo(data));
     // then navigate it to next form

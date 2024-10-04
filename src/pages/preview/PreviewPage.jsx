@@ -2,7 +2,6 @@ import React from "react";
 import { Resume1, Resume2, Resume3, Button } from "../../components";
 import { Download } from "@mui/icons-material";
 import "./preview.scss";
-import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
@@ -10,7 +9,6 @@ import html2canvas from "html2canvas";
 function PreviewPage() {
   const pdfRef = React.useRef(null);
   const userDetails = useSelector((state) => state.userDetails);
-  const navigate = useNavigate();
   const savePDF = () => {
     const pdfContent = pdfRef.current;
 
@@ -31,8 +29,6 @@ function PreviewPage() {
       );
     });
   };
-
-  console.log(userDetails);
 
   return (
     <div className="preview__page">

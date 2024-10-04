@@ -15,9 +15,9 @@ export { default as MultiSelect } from "./common/select/multiple/MultiSelect.jsx
 export { default as PersonalInfo } from "./form/personal-info/PersonalInfo.jsx";
 export { default as EducationInfo } from "./form/education-info/educationinfo.jsx";
 export { default as WorkExperience } from "./form/work-experience/WorkExperience.jsx";
-export { default as Skills } from "./form/key-skills/keyskills.jsx";
 export { default as Projects } from "./form/projects/projects.jsx";
 export { default as Awards } from "./form/awards/awards.jsx";
 export { default as Resume1 } from "./resumes/Resume1.jsx";
 export { default as Resume2 } from "./resumes/Resume2.jsx";
 export { default as Resume3 } from "./resumes/Resume3.jsx";
+export { default as Skills } from "./form/key-skills/keyskills.jsx";

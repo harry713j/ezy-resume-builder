@@ -18,7 +18,6 @@ function Skills() {
   const dispatch = useDispatch();
 
   const skillsInfo = (data) => {
-    console.log("skills: ", data);
     dispatch(addSkills(data.skills));
     navigate("/user-details/projects");
   };

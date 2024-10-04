@@ -4,11 +4,11 @@ import { GitHub, Star } from "@mui/icons-material";
 
 const Footer = () => {
   const teamMembers = [
-    { name: "Shyam", url: "https://github.com/Shyam" },
-    { name: "Deepak", url: "https://github.com/Deepak" },
-    { name: "Dhanashree", url: "https://github.com/Dhanashree" },
-    { name: "Abir", url: "https://github.com/Abir" },
-    { name: "Hari", url: "https://github.com/Hari" },
+    { name: "Shyam", url: "https://github.com/shyam020" },
+    { name: "Deepak", url: "https://github.com/deepak-mohanty-web" },
+    { name: "Dhanashree", url: "https://github.com/Dhanashree1510" },
+    { name: "Abir", url: "https://github.com/AbirDhar79" },
+    { name: "Darth Vader", url: "https://github.com/harry713j" },
   ];
 
   return (
@@ -30,7 +30,7 @@ const Footer = () => {
           {teamMembers.map((member, index) => (
             <React.Fragment key={member.name}>
               <a href={member.url} target="_blank" rel="noopener noreferrer">
-                {member.name}
+                {member.name === "Darth Vader" ? "Hari" : member.name}
               </a>
               {index < teamMembers.length - 1 && ", "}
               {index === teamMembers.length - 2 && "& "}

@@ -35,7 +35,6 @@ function Projects() {
   });
 
   const projectsInfo = (data) => {
-    console.log(data);
     dispatch(addProjects(data.projects));
     navigate("/user-details/achievements");
   };

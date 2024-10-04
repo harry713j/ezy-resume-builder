@@ -1,7 +1,7 @@
 import React from "react";
 import "./awards.scss";
 import { Input, Button, DatePicker, TextArea, IconButton } from "../../index";
-import { useForm, useFieldArray } from "react-hook-form";
+import { useForm, useFieldArray, Controller } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addAchievement } from "../../../store/slices/userDetailsSlice.js";
@@ -34,7 +34,6 @@ function Awards() {
   });
 
   const awardsInfo = (data) => {
-    console.log(data);
     dispatch(addAchievement(data.awards));
     navigate("/preview");
   };
@@ -69,12 +68,19 @@ function Awards() {
                 helperText={errors.awards?.[index]?.awardTitle?.message || null}
                 {...register(`awards.${index}.awardTitle`)}
               />
-              <DatePicker
-                label="Date of Acquisition"
-                helperText={
-                  errors.awards?.[index]?.dateOfAcquisition?.message || null
-                }
-                {...register(`awards.${index}.dateOfAcquisition`)}
+              <Controller
+                name={`awards.${index}.dateOfAcquisition`}
+                control={control}
+                render={({ field }) => (
+                  <DatePicker
+                    label="Date of Acquisition"
+                    value={field.value}
+                    onChange={field.onChange}
+                    helperText={
+                      errors.awards?.[index]?.dateOfAcquisition?.message || null
+                    }
+                  />
+                )}
               />
             </div>
             <div className="form__row">

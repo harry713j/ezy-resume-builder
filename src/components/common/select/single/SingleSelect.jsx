@@ -23,6 +23,7 @@ const SingleSelect = React.forwardRef(function (
         label={label}
         labelId="select-label"
         className="select"
+        defaultValue={""}
         {...props}
       >
         {items.map((item) => (

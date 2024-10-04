@@ -4,7 +4,6 @@ import {
   Stack,
   Card,
   CardContent,
-  Link as MuiLink,
   Divider,
   Snackbar,
   Alert,
@@ -118,7 +117,7 @@ function Signup() {
           <Stack className="stack__2">
             <Button type="submit">create account</Button>
             <Typography align="center">
-              Already have an account? <Link to={"/login"}><MuiLink>Log in</MuiLink></Link> here.
+              Already have an account? <Link to={"/login"}>Log in</Link> here.
             </Typography>
             <Divider>or</Divider>
             <Button onClick={handleGoogleSignIn} startIcon={<GoogleLogo />}>

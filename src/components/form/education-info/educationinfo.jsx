@@ -17,8 +17,6 @@ function EducationInfo() {
   const dispatch = useDispatch();
 
   const educationInfo = (data) => {
-    console.log(data);
-
     dispatch(addEducationDetails(data));
 
     navigate("/user-details/experience");
