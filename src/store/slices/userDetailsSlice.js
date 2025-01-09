@@ -35,7 +35,7 @@ const userDetailsSlice = createSlice({
       state.details.projects = [...action.payload];
     },
     addAchievement: (state, action) => {
-      state.details.projects = [...action.payload];
+      state.details.achievements = [...action.payload];
     },
   },
 });

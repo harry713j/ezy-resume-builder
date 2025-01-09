@@ -11,6 +11,7 @@ function Resume2({ details }) {
     projects,
     achievements,
   } = details;
+
   return (
     <div className="resume__2">
       <section className="id__2">

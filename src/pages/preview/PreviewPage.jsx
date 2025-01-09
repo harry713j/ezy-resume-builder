@@ -9,6 +9,7 @@ import html2canvas from "html2canvas";
 function PreviewPage() {
   const pdfRef = React.useRef(null);
   const userDetails = useSelector((state) => state.userDetails);
+
   const savePDF = () => {
     const pdfContent = pdfRef.current;
 
@@ -25,7 +26,7 @@ function PreviewPage() {
 
       pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight);
       pdf.save(
-        `${userDetails.personalInfo.firstName}_${userDetails.personalInfo.lastName}_resume.pdf`
+        `${userDetails.details.personalInfo.firstName}_${userDetails.details.personalInfo.lastName}_resume.pdf`
       );
     });
   };
